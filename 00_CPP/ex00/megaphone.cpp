@@ -21,3 +21,25 @@ have a header file containing the definition of a class "BrickWall" standing for
 brick wall, its name will be BrickWall.hpp.
 */
 
+
+int doUpp(string str)
+{
+	
+}
+
+
+int main(int ac, char **av)
+{
+	if (ac > 1)
+	{
+		for (int i = 1, i != ac, i++)
+		{
+			if (av[i])
+			{
+				doUpp(av[i]);
+			}
+		}
+	}
+	else
+		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << endl;
+}

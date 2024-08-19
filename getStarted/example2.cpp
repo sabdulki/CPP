@@ -10,7 +10,18 @@ public:
     void stop() { std::cout << "Car stopped" << std::endl; }
 };
 
-int main() {
+class Point {
+private:
+    int x, y;
+
+public:
+    Point(int a, int b) : x(a), y(b) {} // Initialization list
+
+    void display() const { std::cout << "Point(" << x << ", " << y << ")" << std::endl; }
+};
+
+void CarTest()
+{
     Car myCar;
     int speed;
     std::cout << "enter speed: ";
@@ -19,4 +30,16 @@ int main() {
     myCar.color = "Red";
     myCar.drive();
     myCar.stop();
+}
+
+void PointTest()
+{
+    Point p(10, 20);
+    p.display();
+}
+
+int main() 
+{
+    // CarTest();
+    PointTest();
 }
