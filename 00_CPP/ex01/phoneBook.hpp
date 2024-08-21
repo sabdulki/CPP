@@ -1,50 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   phoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 16:31:56 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/21 16:21:37 by sabdulki         ###   ########.fr       */
+/*   Created: 2024/08/21 17:37:56 by sabdulki          #+#    #+#             */
+/*   Updated: 2024/08/21 22:25:17 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
 #include <iostream>
 #include <string>
 #include <cctype>  // For std::toupper
+#include <fstream>  // Required for file handling
 using namespace std;
 
-int doUpp(string str)
-{
-	string::iterator i;
+class Contact {
+	public: 
+		string firstName;
+		string lastName;
+		string nickname;
+		string phoneNumber;
+		string darkestSecret;
+};
 
-	// cout << str << endl; //infinity loop
-	for (i = str.begin(); i != str.end(); ++i)
-	{
-		*i = toupper(static_cast<unsigned char>(*i));
-	}
-	cout << str << " ";
-	return (0);
-}
+class PhoneBook {
+	private:
+		int contactsAmount;
+	public:
+		int getContactsAmount() {
+			return (contactsAmount);
+		}
+		void setContactsAmount(int newAmount) {
+			contactsAmount = newAmount;
+		}
+	string allContacts[];
+};
 
-int main(int ac, char **av)
-{
-	if (ac > 1)
-	{
-		int i;
-		
-		i = 1;
-		for (i = 1; av[i] && i != ac; i++)
-			doUpp(av[i]);
-		// while(av[i] && i != ac)
-		// {
-		// 	doUpp(av[i]);
-		// 	i++;
-		// }
-	}
-	else
-		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	cout << endl;
-	return (0);
-}
+int addCmd();
+int searchCmd();
+int exitCmd();
+
+#endif

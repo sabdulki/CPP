@@ -1,0 +1,7 @@
+Hello! This is a small phone book. Now it's empty. 
+You have 3 options to work with:
+1) Type ADD to add a contact.
+2) Type SEARCH to find data about specific person."
+3) Type EXIT if you want to quit the program.
+Please note that all the contacts will be automatically deleted after quitting.
+Enjoy!
