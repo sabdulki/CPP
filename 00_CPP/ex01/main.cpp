@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 20:57:44 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/21 22:19:53 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/08/22 16:40:41 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,55 @@
 
 void printGreeting()
 {
-	ifstream file("greeting.txt");  // Open the file
-    string line;
+	cout << "--------------------------------------------------------------------------------------------\n";
+	cout << "Hello! This is a small phone book. Now it's empty.\n";
+	cout << "You have " << BOLD_WHITE << "3" << DEFAULT << " options to work with:\n";
+	cout << "1) Type " << GREEN << "ADD" << DEFAULT << " to find data about specific person.\n";
+	cout << "2) Type " << GREEN << "SEARCH" << DEFAULT << " to add a contact.\n";
+	cout << "3) Type " << GREEN << "EXIT" << DEFAULT << " if you want to quit the program.\n";
+	cout << "Please " << YELLOW << "note " << DEFAULT "that all the contacts will be automatically deleted after quitting.";
+	cout << " Enjoy!\n";
+}
 
-    if (file.is_open()) {  // Check if the file was successfully opened
-        while (getline(file, line)) {  // Read the file line by line
-            cout << line << endl;  // Print each line to the console
-        }
-        file.close();  // Close the file after reading
-    } else {
-        std::cout << "Unable to open the file." << std::endl;
-    }
+void printWarning()
+{
+	cout << RED << "Wrong command!\n" << DEFAULT;
+	cout << "Let me remind you that you are allowed to use only ";
+	cout << "'" << GREEN << "ADD" << DEFAULT << "', ";
+	cout << "'" << GREEN << "SEARCH" << DEFAULT << "' or ";
+	cout << "'" << GREEN << "EXIT" << DEFAULT << "'. ";
+	cout << "Try one of them.\n";
+}
 
-    return;
+int suggestACmd(PhoneBook book)
+{
+	string input;
+
+	while (1)
+	{
+		cout << YELLOW << "Enter your comand: " << DEFAULT;
+		cin >> input;
+		if (input == "ADD")
+			addCmd(book);
+		else if (input == "SEARCH")
+			searchCmd(book);
+		else if (input == "EXIT")
+			exitCmd();
+		else
+			printWarning();
+	}
 }
 
 int main()
 {
-	string input;
+	PhoneBook book;
+
+	//do the constructor
+	book.setContactsAmount(8);
+	book.currentIndex = 0;
+
 	printGreeting();
-	while (1)
-	{
-		cout << "Enter your comand: ";
-		cin >> input;
-		if (input == "ADD")
-			addCmd();
-		else if (input == "SEARCH")
-			searchCmd();
-		else if (input == "EXIT")
-			exitCmd();
-		else
-			cout << "Wrong command!\nLet me remind you that you are allowed to use only 'ADD', 'SEARCH' or 'EXIT'. Try one of them.\n";
-	}
+	suggestACmd(book);
 	
+	return (0);
 }

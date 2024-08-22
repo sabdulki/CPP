@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 17:37:56 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/21 22:25:17 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/08/22 16:48:51 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,32 @@ class Contact {
 class PhoneBook {
 	private:
 		int contactsAmount;
+		int tableWidth;
 	public:
-		int getContactsAmount() {
+		int currentIndex;
+		int getPrivateInt() {
 			return (contactsAmount);
 		}
 		void setContactsAmount(int newAmount) {
 			contactsAmount = newAmount;
 		}
-	string allContacts[];
+	Contact allContacts[contactsAmount];
 };
+
+enum Flag 
+{
+	GET = 0,
+	SET = 1,
+	SET_ZERO = 2,
+};
+
+#define BOLD_WHITE "\033[1;37m"
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define YELLOW "\033[33m"
+#define DEFAULT "\033[0m"
+
+
 
 int addCmd();
 int searchCmd();
