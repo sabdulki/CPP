@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 17:37:56 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/22 16:48:51 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/08/22 18:25:17 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,16 @@ class PhoneBook {
 		int tableWidth;
 	public:
 		int currentIndex;
-		int getPrivateInt() {
+		int getContactsAmount() {
 			return (contactsAmount);
 		}
 		void setContactsAmount(int newAmount) {
 			contactsAmount = newAmount;
 		}
-	Contact allContacts[contactsAmount];
+		int getTableWidth() {
+			return (tableWidth);
+		}
+	Contact allContacts[8];
 };
 
 enum Flag 
@@ -58,8 +61,8 @@ enum Flag
 
 
 
-int addCmd();
-int searchCmd();
+int addCmd(PhoneBook book);
+int searchCmd(PhoneBook book);
 int exitCmd();
 
 #endif
