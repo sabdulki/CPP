@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 17:37:56 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/23 19:02:12 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/08/23 19:12:07 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ class PhoneBook {
 	public:
 		int currentIndex;
 		PhoneBook(int contacts, int width, int firstIndex);
+		~PhoneBook() {};
 		int getContactsAmount() {
 			return (contactsAmount);
 		}
