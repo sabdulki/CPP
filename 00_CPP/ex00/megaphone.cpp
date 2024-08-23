@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 16:31:56 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/21 16:21:37 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/08/23 18:16:08 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int doUpp(string str)
 {
 	string::iterator i;
 
-	// cout << str << endl; //infinity loop
 	for (i = str.begin(); i != str.end(); ++i)
 	{
 		*i = toupper(static_cast<unsigned char>(*i));
@@ -37,11 +36,6 @@ int main(int ac, char **av)
 		i = 1;
 		for (i = 1; av[i] && i != ac; i++)
 			doUpp(av[i]);
-		// while(av[i] && i != ac)
-		// {
-		// 	doUpp(av[i]);
-		// 	i++;
-		// }
 	}
 	else
 		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";

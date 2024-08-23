@@ -6,11 +6,11 @@
 #    By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/21 16:21:07 by sabdulki          #+#    #+#              #
-#    Updated: 2024/08/21 22:26:00 by sabdulki         ###   ########.fr        #
+#    Updated: 2024/08/23 18:35:04 by sabdulki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ./main.cpp ./cmds.cpp
+SRCS = ./main.cpp ./cmds.cpp ./utils.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
