@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 21:33:21 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/23 18:32:47 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/08/23 19:04:54 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,10 +97,16 @@ PhoneBook searchCmd(PhoneBook book)
 		cout << YELLOW << "Enter the index: " << DEFAULT;
 		cin >> strIndex;
 		if (checkOnlyInt(strIndex, "Invalid index. "))
-			iTry++; continue ;
+		{
+			iTry++; 
+			continue ;
+		}
 		index = stoi(strIndex);
 		if (checkInRange(index, book))
-			iTry++; continue ;
+		{
+			iTry++; 
+			continue ;
+		}
 		break ;
 	}
 	if (iTry == maxTry)

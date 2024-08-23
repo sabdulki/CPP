@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 14:23:56 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/23 18:34:02 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/08/23 19:06:07 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,25 @@ string printOption(int index, string message)
 		if (index == 5)
 			getline(cin, str);
 		else
-			cin >> str; cin.ignore();
+		{
+			cin >> str; 
+			cin.ignore();
+		}
 		if (index == 1 || index == 2)
 		{
 			if (checkOnlyChars(str))
-				iTry++; continue ;
+			{
+				iTry++; 
+				continue ;
+			}
 		}
 		else if (index == 4)
 		{
 			if (checkOnlyInt(str, "Invalid phone number. "))
-				iTry++; continue ;
+			{
+				iTry++; 
+				continue ;
+			}
 		}
 		break;
 	}
@@ -100,7 +109,7 @@ int checkOnlyInt(string strIndex, string errorMsg)
 {
 	for (int i = 0; i < strIndex.length(); i++)
 	{
-		if (strIndex[i] < '0' || strIndex[i] > '9') //protetct from characters
+		if (strIndex[i] < '0' || strIndex[i] > '9')
 		{
 			cout << RED << errorMsg << DEFAULT;
 			cout << "Can contain only digits. Try again." << endl;

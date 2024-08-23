@@ -6,11 +6,18 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 20:57:44 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/23 18:23:41 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/08/23 19:01:55 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phoneBook.hpp"
+
+PhoneBook::PhoneBook(int contacts, int width, int firstIndex)
+{
+	setContactsAmount(contacts);
+	setTableWidth(width);
+	currentIndex = firstIndex;
+}
 
 int suggestACmd(PhoneBook book)
 {
@@ -34,12 +41,13 @@ int suggestACmd(PhoneBook book)
 
 int main()
 {
-	PhoneBook book;
+	PhoneBook book(8, 10, 0);
 
 	//do the constructor
-	book.setContactsAmount(8);
-	book.setTableWidth(10);
-	book.currentIndex = 0;
+	
+	// book.setContactsAmount(8);
+	// book.setTableWidth(10);
+	// book.currentIndex = 0;
 
 	printGreeting();
 	suggestACmd(book);
