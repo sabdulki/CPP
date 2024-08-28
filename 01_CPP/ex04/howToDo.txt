@@ -1,0 +1,111 @@
+/* 
+my approach
+1. find index of first occurance of substring s1.
+1,1. have to check if the s1 was in line more than 1 time!
+2. return it's index
+3. calculate lenght of line from 0 o pos index (chars before s1).
+3. copy this line from 0 to pos index into fileReplace.
+3,1. if index is -1, copy the whole line to the fileReplace.
+4. calculate lenght of s2.
+5. copy s2 to pos index into fileReplace
+6. in the fileObj continue to read from pos
+
+*/
+
+int arrLength(string line, string s1, int len)
+{
+	// size_t pos;
+
+	// pos = line.find(s1, pos );
+	// if (pos != std::string::npos)
+	// {
+	// 	len += 1;
+	// 	len = arrLength(line.substr((pos + s1.length()), line.length() - s1.length()), s1, len);
+	// }
+	// else
+	// 	return (0);
+	// return (len);
+
+    size_t pos = 0;
+    int count = 0;
+
+    while ((pos = line.find(s1, pos)) != std::string::npos) 
+	{
+        ++count;
+        pos += s1.length();  // Move past the current occurrence
+    }
+    return count;
+}
+
+int* checkLine(string line, string s1, int *posArr, int i)
+{
+	// Perform a case-sensitive search
+    // size_t pos;
+	// int arrLen = arrLength(line, s1, 0);
+	// int* posArr = new int[arrLen];
+	
+	// pos = line.find(s1); //searchs for the first occurance of the string. Hold the index of first char of target string
+    // if (pos != std::string::npos)
+	// {
+	// 	posArr[i] = pos;
+	// 	i += 1;
+	// 	posArr = checkLine(line.substr((pos + s1.length()), line.length() - s1.length()), s1, i);
+	// 	std::cout << "Substring \"" << s1 << "\" found at position " << pos << std::endl;
+	// }
+    // else {
+    //     std::cout << "Substring \"" << s1 << "\" not found." << std::endl;
+	// 	return (-1);
+    // }
+	// return (posArr);
+
+	arrSize = arrLength(line, s1);
+    
+    if (arrSize == 0) {
+        std::cout << "Substring \"" << s1 << "\" not found." << std::endl;
+        return nullptr;
+    }
+
+    // Allocate memory for the array
+    int* posArr = new int[arrSize];
+    int index = 0;
+
+    // Find and store each occurrence
+    size_t pos = line.find(s1);
+    while (pos != std::string::npos) {
+        posArr[index++] = static_cast<int>(pos);
+        pos = line.find(s1, pos + s1.length());  // Search for the next occurrence
+    }
+	return (posArr);
+}
+// line.insert(pos, s2);
+
+int oldReplaseFile(std::ifstream fileObj, string s1, string s2, string oldFileName) //file already open
+{
+    std::string line;
+    std::string tmp_str;
+    std::string beforeS1;
+	int pos;
+	int *posArr;
+
+	std::ofstream fileReplace = writeOpenFile(oldFileName.append(".replace"));
+
+    while (getline(fileObj, line)) // Read the file line by line
+	{
+        if (!(posArr = checkLine(line, s1))) // copy whole string to fileReplace
+		{
+			fileReplace << line << endl;
+			continue ;
+		}
+		// copy first part
+		beforeS1 = line.substr(0, pos - 1); // or pos - 1
+		fileReplace << beforeS1 << endl;
+		//copy s2
+		fileReplace << s2 << endl;
+		// tmp_str = line.substr(pos, s1.length());
+		// fileReplace << tmp_str << endl;\
+		//copy after s1
+		if (pos < line.length())
+		
+	}
+    fileObj.close(); 
+}
