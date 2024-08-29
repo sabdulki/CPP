@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/24 16:09:46 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/29 18:42:53 by sabdulki         ###   ########.fr       */
+/*   Created: 2024/08/29 18:58:44 by sabdulki          #+#    #+#             */
+/*   Updated: 2024/08/29 19:28:53 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
 
-// do the constructor here
+// HumanA::HumanA(string newName, Weapon &newWeapon)
+// {
+// 	name = newName; 
+// 	weaponA = newWeapon;
+// }
 
-void Zombie::announce(void)
+void HumanA::attack() 
 {
-	cout << getName() << ": BraiiiiiiinnnzzzZ..." << endl;
-}
-
-string Zombie::getName(void)
-{
-	return (name);
-}
-
-void Zombie::setName(string newName)
-{
-	name = newName;
-}
-
-Zombie::Zombie(string newName)
-{
-	setName(newName);
-}
-
-Zombie::~Zombie()
-{
-	cout << "Destructor has been called for zombie named " << name << endl;
+    cout << name << " attacks with their " << weaponA.getType() << endl;
+	return ;
 }

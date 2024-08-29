@@ -6,11 +6,11 @@
 #    By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/24 17:18:31 by sabdulki          #+#    #+#              #
-#    Updated: 2024/08/27 16:38:58 by sabdulki         ###   ########.fr        #
+#    Updated: 2024/08/29 19:03:29 by sabdulki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.cpp
+SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++

@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 15:58:22 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/24 17:17:21 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/08/29 18:47:33 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 
 #include <iostream>
 #include <string>
-#include <cctype>  // For std::toupper
-#include <fstream>  // Required for file handling
 using namespace std;
-
 
 class Zombie {
 	private:

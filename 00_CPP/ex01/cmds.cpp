@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 21:33:21 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/23 19:04:54 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/08/29 18:33:05 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int indexGetSet(int flag)
 
 	if (flag == SET && index < 8)
 		index += 1;
-	if (flag == SET_ZERO)
-		index = 0;
 	return (index);
 }
 
@@ -71,7 +69,7 @@ int displayTable(PhoneBook book)
 	for (i = 0; i < index; i++)
 	{
 		cout << "| ";
-		printField(book, to_string(i+1)); //with " | "
+		printField(book, to_string(i+1));
 		printField(book, book.allContacts[i].firstName);
 		printField(book, book.allContacts[i].lastName);
 		printField(book, book.allContacts[i].nickname);

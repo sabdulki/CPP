@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 20:57:44 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/23 19:01:55 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/08/29 18:31:45 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,6 @@ int suggestACmd(PhoneBook book)
 int main()
 {
 	PhoneBook book(8, 10, 0);
-
-	//do the constructor
-	
-	// book.setContactsAmount(8);
-	// book.setTableWidth(10);
-	// book.currentIndex = 0;
-
 	printGreeting();
 	suggestACmd(book);
 	return (0);

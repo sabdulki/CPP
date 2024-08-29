@@ -6,14 +6,16 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 15:57:48 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/24 16:19:10 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/08/29 18:41:39 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include " Zombie.hpp"
+#include "Zombie.hpp"
 
 int main()
 {
 	Zombie zombie1("Foo");
+	zombie1.announce();
+	// ~Zombie();
 	return (0);
 }

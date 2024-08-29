@@ -6,11 +6,11 @@
 #    By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/24 15:57:27 by sabdulki          #+#    #+#              #
-#    Updated: 2024/08/24 15:57:36 by sabdulki         ###   ########.fr        #
+#    Updated: 2024/08/29 18:42:25 by sabdulki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ./main.cpp
+SRCS = ./main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++

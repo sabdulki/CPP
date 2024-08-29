@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 15:58:22 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/24 16:16:39 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/08/29 18:41:31 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ class Zombie {
 		string name;
 	public:
 		Zombie(string newName);
+		~Zombie();
 		void announce(void);
 		string getName(void);
 		void setName(string newName);
-}
+};
 
 #endif
