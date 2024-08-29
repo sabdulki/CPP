@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 01:08:35 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/29 01:44:37 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/08/29 17:09:34 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,19 @@
 #include <fstream>
 using namespace std;
 
-
-
-
 class Harl {
-	
-	void debug( void );
- 	void info( void );
- 	void warning( void );
- 	void error( void );
+	private:
+		void debug( void );
+ 		void info( void );
+ 		void warning( void );
+ 		void error( void );
 
 	public:
-		void complain( std::string level );
-
+		void complain(string level);
+		int arrSize;
+		string* levelsArr;
+		Harl();
+		~Harl();
 };
 
-
-#endif // !HARL_HPP
+#endif

@@ -6,7 +6,7 @@
 #    By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/24 17:18:31 by sabdulki          #+#    #+#              #
-#    Updated: 2024/08/29 01:11:04 by sabdulki         ###   ########.fr        #
+#    Updated: 2024/08/29 17:10:32 by sabdulki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ SRCS = main.cpp Harl.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 
 
-NAME = replace
+NAME = harl
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)

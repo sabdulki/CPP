@@ -20,3 +20,8 @@ int getArrayLength = sizeof(myNumbers) / sizeof(int);
 Pointers are best when the object might not exist or needs to be changeable during the object's lifetime.
 References are best when you can guarantee that the object will always exist 
 and be tied to the lifetime of the class using it.
+
+File and streams handling
+The input and output operation between the executing program and files are known as “disk I/O operation”.
+
+ifstream file(filename);
