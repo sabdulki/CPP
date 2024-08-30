@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 17:37:56 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/29 18:32:25 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/08/30 17:49:01 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ class PhoneBook {
 enum Flag 
 {
 	GET = 0,
-	SET = 1
+	SET = 1,
+	SET_ZERO = 3,
 };
 
 /* commands */

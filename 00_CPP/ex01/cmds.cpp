@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 21:33:21 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/29 18:33:05 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/08/30 17:53:04 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int indexGetSet(int flag)
 
 	if (flag == SET && index < 8)
 		index += 1;
+	if (flag == SET_ZERO)
+		index = 0;
 	return (index);
 }
 
@@ -49,7 +51,10 @@ PhoneBook addCmd(PhoneBook book)
 		return (book);
 	book.currentIndex = indexGetSet(GET);
 	if (book.currentIndex >= book.getContactsAmount())
+	{
 		book.currentIndex = 7;
+		//book.currentIndex = indexGetSet(SET_ZERO); if i do this, the table clears and remain only 1 contact
+	}
 	book.allContacts[book.currentIndex] = newContact;
 	book.currentIndex = indexGetSet(SET);
 	cout << GREEN << "New contact was successfully added to the Phone Book!\n" << DEFAULT;
