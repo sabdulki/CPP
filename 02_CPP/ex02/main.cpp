@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 13:53:25 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/31 01:04:59 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/08/31 23:22:38 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int main()
 	// std::cout << Fixed::max( a, b ) << std::endl;
 
 
-	Fixed a(2.5f);
-	Fixed const b(2);
+	Fixed a(5);
+	Fixed const b(2.5f);
 	std::cout << "a: " << a << std::endl;
 	std::cout << "b: " << b << std::endl;
 	

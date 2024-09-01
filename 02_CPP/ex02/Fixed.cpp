@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 13:53:45 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/31 01:09:19 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/08/31 23:23:38 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ of the fixed-point number into the output stream object passed as parameter. */
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed) 
 {
-	// cout << "before toFloat: "
+	cout << "before toFloat: " << fixed.getRawBits() << endl;
     os << fixed.toFloat();
     return os;
 }

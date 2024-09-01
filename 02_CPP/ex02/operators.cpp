@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 23:58:23 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/31 00:51:35 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/08/31 23:43:22 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Fixed& Fixed::operator=(const Fixed& other)
 	return *this;
 }
 
+//done
 Fixed Fixed::operator+(const Fixed& other)
 {
 	Fixed result;
@@ -35,6 +36,7 @@ Fixed Fixed::operator+(const Fixed& other)
 	return result;
 }
 
+//done
 Fixed Fixed::operator-(const Fixed& other)
 {
 	Fixed result;
@@ -42,16 +44,18 @@ Fixed Fixed::operator-(const Fixed& other)
 	return result;
 }
 
+
 Fixed Fixed::operator*(const Fixed& other) 
 {
-	Fixed result;
-	result.fixedPointNumberValue = this->fixedPointNumberValue * other.fixedPointNumberValue;
-	return result;
+    Fixed result;
+	result.fixedPointNumberValue = (this->fixedPointNumberValue) * other.fixedPointNumberValue;
+    result.fixedPointNumberValue >>= fractionalBits; // Correct the scale by shifting right.
+    return result;
 }
 
 Fixed Fixed::operator/(const Fixed& other) 
 {
 	Fixed result;
-	result.fixedPointNumberValue = this->fixedPointNumberValue / other.fixedPointNumberValue;
+	result.fixedPointNumberValue = (this->fixedPointNumberValue / other.fixedPointNumberValue); // / pow(2, this->fractionalBits);
 	return result;
 }
