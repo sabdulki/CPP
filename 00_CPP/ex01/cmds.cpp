@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 21:33:21 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/30 17:53:04 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/02 16:30:04 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ int indexGetSet(int flag)
 {
 	static int	index;
 
-	if (flag == SET && index < 8)
+	if (flag == SET)
 		index += 1;
-	if (flag == SET_ZERO)
-		index = 0;
 	return (index);
 }
 
@@ -52,11 +50,10 @@ PhoneBook addCmd(PhoneBook book)
 	book.currentIndex = indexGetSet(GET);
 	if (book.currentIndex >= book.getContactsAmount())
 	{
-		book.currentIndex = 7;
-		//book.currentIndex = indexGetSet(SET_ZERO); if i do this, the table clears and remain only 1 contact
+		book.currentIndex = book.currentIndex % book.getContactsAmount();
 	}
-	book.allContacts[book.currentIndex] = newContact;
-	book.currentIndex = indexGetSet(SET);
+	book.setContact(book, newContact, book.currentIndex);
+	indexGetSet(SET);
 	cout << GREEN << "New contact was successfully added to the Phone Book!\n" << DEFAULT;
 	return (book);
 }
@@ -71,13 +68,13 @@ int displayTable(PhoneBook book)
 	cout << "| ---------- | ---------- | ---------- | ---------- |\n";
 	if (index == 0)
 		return (1);
-	for (i = 0; i < index; i++)
+	for (i = 0; i < index && i < book.getContactsAmount(); i++)
 	{
 		cout << "| ";
 		printField(book, to_string(i+1));
-		printField(book, book.allContacts[i].firstName);
-		printField(book, book.allContacts[i].lastName);
-		printField(book, book.allContacts[i].nickname);
+		printField(book, book.getContact(book, i).firstName);
+		printField(book, book.getContact(book, i).lastName);
+		printField(book, book.getContact(book, i).nickname);
 		cout << endl;
 	}
 	cout << "| ---------- | ---------- | ---------- | ---------- |\n";
@@ -98,7 +95,7 @@ PhoneBook searchCmd(PhoneBook book)
 	while (iTry < maxTry)
 	{
 		cout << YELLOW << "Enter the index: " << DEFAULT;
-		cin >> strIndex;
+		strIndex = safeCin();
 		if (checkOnlyInt(strIndex, "Invalid index. "))
 		{
 			iTry++; 

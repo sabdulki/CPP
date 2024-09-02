@@ -6,11 +6,20 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 14:23:56 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/23 19:06:07 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/02 16:30:18 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phoneBook.hpp"
+
+string safeCin(void)
+{
+	string input;
+	cin >> input;
+	if (input[0] == '\0')
+			exitCmd();
+	return (input);
+}
 
 string printOption(int index, string message)
 {
@@ -27,7 +36,7 @@ string printOption(int index, string message)
 			getline(cin, str);
 		else
 		{
-			cin >> str; 
+			str = safeCin();
 			cin.ignore();
 		}
 		if (index == 1 || index == 2)
@@ -98,11 +107,11 @@ int printField(PhoneBook book, string data)
 
 void printCertainInfo(PhoneBook book, int index)
 {
-	cout << "1) First Name: " << book.allContacts[index].firstName << endl;
-	cout << "2) Last Name: " << book.allContacts[index].lastName << endl;
-	cout << "3) Nickname:  " << book.allContacts[index].nickname << endl;
-	cout << "4) Phone Number: " << book.allContacts[index].phoneNumber << endl;
-	cout << "5) Darkest secret: " << book.allContacts[index].darkestSecret << endl;
+	cout << "1) First Name: " << book.getContact(book, index).firstName << endl;
+	cout << "2) Last Name: " << book.getContact(book, index).lastName << endl;
+	cout << "3) Nickname:  " << book.getContact(book, index).nickname << endl;
+	cout << "4) Phone Number: " << book.getContact(book, index).phoneNumber << endl;
+	cout << "5) Darkest secret: " << book.getContact(book, index).darkestSecret << endl;
 }
 
 int checkOnlyInt(string strIndex, string errorMsg)

@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 17:37:56 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/30 17:49:01 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/02 16:40:45 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 #include <iostream>
 #include <string>
-#include <cctype>  // For std::toupper
-#include <fstream>  // Required for file handling
 using namespace std;
 
 /* COLORS */
@@ -27,7 +25,9 @@ using namespace std;
 #define DEFAULT "\033[0m"
 
 class Contact {
-	public: 
+	public:
+		Contact() {};
+		~Contact() {};
 		string firstName;
 		string lastName;
 		string nickname;
@@ -39,6 +39,7 @@ class PhoneBook {
 	private:
 		int contactsAmount;
 		int tableWidth;
+		Contact allContacts[8];
 	public:
 		int currentIndex;
 		PhoneBook(int contacts, int width, int firstIndex);
@@ -55,20 +56,27 @@ class PhoneBook {
 		void setTableWidth(int newWidth) {
 			tableWidth = newWidth; 
 		}
-	Contact allContacts[8];
+		Contact& getContact(PhoneBook& book, int index) {
+    		return book.allContacts[index];
+		}
+		void setContact(PhoneBook& book, Contact& newContact, int index) {
+			book.allContacts[index] = newContact;
+		}
 };
 
 enum Flag 
 {
 	GET = 0,
 	SET = 1,
-	SET_ZERO = 3,
 };
 
 /* commands */
 PhoneBook	addCmd(PhoneBook book);
 PhoneBook	searchCmd(PhoneBook book);
 int 		exitCmd();
+
+int indexGetSet(int flag);
+string safeCin(void);
 
 /* utils */
 void		printGreeting();

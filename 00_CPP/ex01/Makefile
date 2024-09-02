@@ -6,7 +6,7 @@
 #    By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/21 16:21:07 by sabdulki          #+#    #+#              #
-#    Updated: 2024/08/23 18:35:04 by sabdulki         ###   ########.fr        #
+#    Updated: 2024/09/02 14:30:40 by sabdulki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRCS = ./main.cpp ./cmds.cpp ./utils.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
 
 NAME = phoneBook
 
