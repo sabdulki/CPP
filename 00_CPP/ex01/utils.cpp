@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 14:23:56 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/02 16:30:18 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/02 22:29:57 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ string safeCin(void)
 	string input;
 	cin >> input;
 	if (input[0] == '\0')
-			exitCmd();
+		exitCmd();
 	return (input);
 }
 
@@ -84,34 +84,33 @@ void printWarning()
 	cout << "Try one of them.\n";
 }
 
-int printField(PhoneBook book, string data)
+void PhoneBook::printField(string data)
 {
 	int spacesLen;
 	string newData;
 	
-	spacesLen = book.getTableWidth() - data.length();
+	spacesLen = this->getTableWidth() - data.length();
 	if (spacesLen >= 0) //print spaces
 	{
-		cout << data;
 		for (int i = 0; i < spacesLen; i++)
 			cout << " "; 
+		cout << data;
 	}
 	else if (spacesLen < 0) //truncate string
 	{
-		newData = data.substr(0, book.getTableWidth() - 1);
+		newData = data.substr(0, this->getTableWidth() - 1);
 		cout << newData << ".";
 	}
 	cout << " | ";
-	return (0);
 }
 
-void printCertainInfo(PhoneBook book, int index)
+void PhoneBook::printCertainInfo(int index)
 {
-	cout << "1) First Name: " << book.getContact(book, index).firstName << endl;
-	cout << "2) Last Name: " << book.getContact(book, index).lastName << endl;
-	cout << "3) Nickname:  " << book.getContact(book, index).nickname << endl;
-	cout << "4) Phone Number: " << book.getContact(book, index).phoneNumber << endl;
-	cout << "5) Darkest secret: " << book.getContact(book, index).darkestSecret << endl;
+	cout << "1) First Name: " << this->getContact(index).getField(1) << endl;
+	cout << "2) Last Name: " << this->getContact(index).getField(2) << endl;
+	cout << "3) Nickname:  " << this->getContact(index).getField(3) << endl;
+	cout << "4) Phone Number: " << this->getContact(index).getField(4) << endl;
+	cout << "5) Darkest secret: " << this->getContact(index).getField(5) << endl;
 }
 
 int checkOnlyInt(string strIndex, string errorMsg)

@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 17:37:56 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/02 16:40:45 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/02 22:35:53 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,43 +25,52 @@ using namespace std;
 #define DEFAULT "\033[0m"
 
 class Contact {
-	public:
-		Contact() {};
-		~Contact() {};
+	private:
 		string firstName;
 		string lastName;
 		string nickname;
 		string phoneNumber;
 		string darkestSecret;
+	public:
+		Contact() {};
+		~Contact() {};
+		bool setField(int fieldIndex, string data);
+		string getField(int fieldIndex);
+		// newContact.setup(string filed, int flag)
 };
 
 class PhoneBook {
 	private:
-		int contactsAmount;
-		int tableWidth;
+		const int contactsAmount = 8;
+		const int tableWidth = 10;
 		Contact allContacts[8];
 	public:
-		int currentIndex;
-		PhoneBook(int contacts, int width, int firstIndex);
+		int currentIndex = 0;
+		PhoneBook() {};
 		~PhoneBook() {};
 		int getContactsAmount() {
 			return (contactsAmount);
 		}
-		void setContactsAmount(int newAmount) {
-			contactsAmount = newAmount;
-		}
 		int getTableWidth() {
 			return (tableWidth);
 		}
-		void setTableWidth(int newWidth) {
-			tableWidth = newWidth; 
+		// void setTableWidth(int newWidth) {
+		// 	tableWidth = newWidth; 
+		// }
+		Contact& getContact(int index) {
+    		return allContacts[index];
 		}
-		Contact& getContact(PhoneBook& book, int index) {
-    		return book.allContacts[index];
+		void setContact(Contact& newContact, int index) {
+			allContacts[index] = newContact;
 		}
-		void setContact(PhoneBook& book, Contact& newContact, int index) {
-			book.allContacts[index] = newContact;
-		}
+		void printContactInfo(int i);
+		void printCertainInfo(int index);
+		int checkInRange(int index);
+		void printField(string data);
+		int displayTable();
+		void addCmd();
+		void searchCmd();
+		
 };
 
 enum Flag 
@@ -71,9 +80,7 @@ enum Flag
 };
 
 /* commands */
-PhoneBook	addCmd(PhoneBook book);
-PhoneBook	searchCmd(PhoneBook book);
-int 		exitCmd();
+void exitCmd();
 
 int indexGetSet(int flag);
 string safeCin(void);
@@ -88,4 +95,5 @@ int			checkOnlyInt(string strIndex, string errorMsg);
 int			checkOnlyChars(string str);
 int			checkInRange(int index, PhoneBook book);
 
+PhoneBook& test(PhoneBook& book);
 #endif
