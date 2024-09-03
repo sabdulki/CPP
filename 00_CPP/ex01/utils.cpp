@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 14:23:56 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/02 22:29:57 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/03 13:20:11 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,35 +82,6 @@ void printWarning()
 	cout << "'" << GREEN << "SEARCH" << DEFAULT << "' or ";
 	cout << "'" << GREEN << "EXIT" << DEFAULT << "'. ";
 	cout << "Try one of them.\n";
-}
-
-void PhoneBook::printField(string data)
-{
-	int spacesLen;
-	string newData;
-	
-	spacesLen = this->getTableWidth() - data.length();
-	if (spacesLen >= 0) //print spaces
-	{
-		for (int i = 0; i < spacesLen; i++)
-			cout << " "; 
-		cout << data;
-	}
-	else if (spacesLen < 0) //truncate string
-	{
-		newData = data.substr(0, this->getTableWidth() - 1);
-		cout << newData << ".";
-	}
-	cout << " | ";
-}
-
-void PhoneBook::printCertainInfo(int index)
-{
-	cout << "1) First Name: " << this->getContact(index).getField(1) << endl;
-	cout << "2) Last Name: " << this->getContact(index).getField(2) << endl;
-	cout << "3) Nickname:  " << this->getContact(index).getField(3) << endl;
-	cout << "4) Phone Number: " << this->getContact(index).getField(4) << endl;
-	cout << "5) Darkest secret: " << this->getContact(index).getField(5) << endl;
 }
 
 int checkOnlyInt(string strIndex, string errorMsg)

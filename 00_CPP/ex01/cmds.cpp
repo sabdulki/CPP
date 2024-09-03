@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 21:33:21 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/02 22:47:52 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/03 13:19:47 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,66 +19,6 @@ int indexGetSet(int flag)
 	if (flag == SET)
 		index += 1;
 	return (index);
-}
-
-int PhoneBook::checkInRange(int index)
-{
-	if (index < 1 || index > indexGetSet(GET) || index > this->getContactsAmount())
-	{
-		cout << RED << "Index is out of range: " << index << DEFAULT << endl;
-		cout << "Try again.\n";
-		return (1);
-	}
-	return (0);
-}
-
-bool Contact::setField(int fieldIndex, string data)
-{
-	if (data.empty())
-		return (false);
-	switch (fieldIndex)
-	{
-		case 1:
-			this->firstName = data;
-			break;
-		case 2:
-			this->lastName = data;
-			break;
-		case 3:
-			this->nickname = data;
-			break;
-		case 4:
-			this->phoneNumber = data;
-			break;
-		case 5:
-			this->darkestSecret = data;
-			break;
-		default:
-			cout << "Wrong index\n";
-			return (false);
-	}
-	return (true);
-}
-
-string Contact::getField(int fieldIndex)
-{
-	switch (fieldIndex)
-	{
-		case 1:
-			return (this->firstName);
-		case 2:
-			return (this->lastName);
-		case 3:
-			return (this->nickname);
-		case 4:
-			return (this->phoneNumber);
-		case 5:
-			return (this->darkestSecret);
-		default:
-			cout << "Wrong index\n";
-			return ("");
-	}
-	return ("");
 }
 
 void PhoneBook::addCmd()
@@ -101,34 +41,6 @@ void PhoneBook::addCmd()
 	indexGetSet(SET);
 	cout << GREEN << "New contact was successfully added to the Phone Book!\n" << DEFAULT;
 	return ;
-}
-
-void PhoneBook::printContactInfo(int i)
-{
-	printField(this->getContact(i).getField(1));
-	printField(this->getContact(i).getField(2));
-	printField(this->getContact(i).getField(3));
-}
-
-int PhoneBook::displayTable()
-{
-	int i;
-	int index;
-
-	index = indexGetSet(GET);
-	cout << "| index      | first name | last name  | nickname   |\n";
-	cout << "| ---------- | ---------- | ---------- | ---------- |\n";
-	if (index == 0)
-		return (1);
-	for (i = 0; i < index && i < this->getContactsAmount(); i++)
-	{
-		cout << "| ";
-		this->printField(to_string(i+1));
-		this->printContactInfo(i);
-		cout << endl;
-	}
-	cout << "| ---------- | ---------- | ---------- | ---------- |\n";
-	return (0);
 }
 
 void PhoneBook::searchCmd()

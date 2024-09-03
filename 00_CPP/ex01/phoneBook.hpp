@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 17:37:56 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/03 12:22:50 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/03 13:17:19 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,14 @@
 #include <string>
 using namespace std;
 
+#include "Contact.hpp"
+
 /* COLORS */
 #define BOLD_WHITE "\033[1;37m"
 #define RED "\033[31m"
 #define GREEN "\033[32m"
 #define YELLOW "\033[33m"
 #define DEFAULT "\033[0m"
-
-class Contact {
-	private:
-		string firstName;
-		string lastName;
-		string nickname;
-		string phoneNumber;
-		string darkestSecret;
-	public:
-		Contact() {};
-		~Contact() {};
-		bool setField(int fieldIndex, string data);
-		string getField(int fieldIndex);
-};
 
 class PhoneBook {
 	private:
