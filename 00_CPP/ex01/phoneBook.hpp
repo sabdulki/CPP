@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 17:37:56 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/03 13:17:19 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:22:32 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <iostream>
 #include <string>
-using namespace std;
 
 #include "Contact.hpp"
 
@@ -42,7 +41,7 @@ class PhoneBook {
 		int 	displayTable();
 		void 	printContactInfo(int i);
 		void 	printCertainInfo(int index);
-		void 	printField(string data);
+		void 	printField(std::string data);
 		int 	checkInRange(int index);
 		void 	addCmd();
 		void 	searchCmd();
@@ -55,14 +54,14 @@ enum Flag
 	SET = 1,
 };
 
-void		exitCmd();
-int			indexGetSet(int flag);
-string		safeCin(void);
-void		printGreeting();
-void		printWarning();
-string 		printOption(int index, string message);
-int			checkOnlyInt(string strIndex, string errorMsg);
-int			checkOnlyChars(string str);
+void			exitCmd();
+void			printGreeting();
+void			printWarning();
+int				indexGetSet(int flag);
+int				checkOnlyInt(std::string strIndex, std::string errorMsg);
+int				checkOnlyChars(std::string str);
+std::string		safeCin(void);
+std::string 	printOption(int index, std::string message);
 
 PhoneBook&	test(PhoneBook& book);
 #endif

@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 13:15:31 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/03 17:17:39 by sabdulki         ###   ########.fr       */
+/*   Created: 2024/09/03 16:17:20 by sabdulki          #+#    #+#             */
+/*   Updated: 2024/09/03 17:15:05 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-#define CONTACT_HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-#include <iostream>
-#include <string>
+#include "ClapTrap.hpp"
 
-class Contact {
-	private:
-		std::string firstName;
-		std::string lastName;
-		std::string nickname;
-		std::string phoneNumber;
-		std::string darkestSecret;
+
+class ScavTrap : public ClapTrap {
 	public:
-		Contact() {};
-		~Contact() {};
-		bool setField(int fieldIndex, std::string data);
-		std::string getField(int fieldIndex);
+	ScavTrap();
+	ScavTrap(ScavTrap& other);
+	ScavTrap& operator=(ScavTrap& other);
+	~ScavTrap();
+	
+	void guardGate();
 };
+
 
 #endif

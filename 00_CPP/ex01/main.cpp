@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 20:57:44 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/03 12:16:23 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:20:50 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int suggestACmd(PhoneBook book)
 {
-	string input;
+	std::string input;
 
 	while (1)
 	{
-		cout << YELLOW << "Enter your comand: " << DEFAULT;
+		std::cout << YELLOW << "Enter your comand: " << DEFAULT;
 		input = safeCin();
 		if (input == "ADD")
 			book.addCmd();

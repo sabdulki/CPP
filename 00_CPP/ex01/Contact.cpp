@@ -6,13 +6,13 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 13:17:50 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/03 13:18:47 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:22:44 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-bool Contact::setField(int fieldIndex, string data)
+bool Contact::setField(int fieldIndex, std::string data)
 {
 	if (data.empty())
 		return (false);
@@ -34,13 +34,13 @@ bool Contact::setField(int fieldIndex, string data)
 			this->darkestSecret = data;
 			break;
 		default:
-			cout << "Wrong index\n";
+			std::cout << "Wrong index\n";
 			return (false);
 	}
 	return (true);
 }
 
-string Contact::getField(int fieldIndex)
+std::string Contact::getField(int fieldIndex)
 {
 	switch (fieldIndex)
 	{
@@ -55,7 +55,7 @@ string Contact::getField(int fieldIndex)
 		case 5:
 			return (this->darkestSecret);
 		default:
-			cout << "Wrong index\n";
+			std::cout << "Wrong index\n";
 			return ("");
 	}
 	return ("");

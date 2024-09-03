@@ -6,19 +6,23 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 13:08:52 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/03 16:14:38 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:09:36 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string newName, int newHitPoints, int newEnergyPoints, int newAttackDamage)
+ClapTrap::ClapTrap() //default constructor
 {
-	std::cout << YELLOW "Constructor called" << DEFAULT << std::endl;
+	hitPoints = 10;
+	energyPoints = 10;
+	attackDamage = 0;
+}
+
+ClapTrap::ClapTrap(std::string newName)
+{
+	std::cout << YELLOW "ClapTrap constructor called " << DEFAULT << std::endl;
 	name = newName;
-	hitPoints = newHitPoints;
-	energyPoints = newEnergyPoints;
-	attackDamage = newAttackDamage;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
@@ -28,7 +32,7 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 	energyPoints = other.energyPoints;
 	attackDamage = other.attackDamage;
 	
-	std::cout <<  YELLOW "Copy constructor called" << DEFAULT << std::endl;
+	std::cout <<  YELLOW "ClapTrap copy constructor called" << DEFAULT << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
@@ -40,13 +44,13 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 		energyPoints = other.energyPoints;
 		attackDamage = other.attackDamage;
 	}
-	std::cout <<  YELLOW "Copy assignment operator overload called" << DEFAULT << std::endl;
+	std::cout <<  YELLOW "ClapTrap copy assignment operator overload called" << DEFAULT << std::endl;
 	return (*this);
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout <<  YELLOW "Destructor called" << DEFAULT << std::endl;
+	std::cout <<  YELLOW "ClapTrap destructor called" << DEFAULT << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)

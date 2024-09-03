@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 12:20:27 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/03 13:20:14 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:22:09 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int PhoneBook::checkInRange(int index)
 {
 	if (index < 1 || index > indexGetSet(GET) || index > this->getContactsAmount())
 	{
-		cout << RED << "Index is out of range: " << index << DEFAULT << endl;
-		cout << "Try again.\n";
+		std::cout << RED << "Index is out of range: " << index << DEFAULT << std::endl;
+		std::cout << "Try again.\n";
 		return (1);
 	}
 	return (0);
@@ -52,46 +52,46 @@ int PhoneBook::displayTable()
 	int index;
 
 	index = indexGetSet(GET);
-	cout << "| index      | first name | last name  | nickname   |\n";
-	cout << "| ---------- | ---------- | ---------- | ---------- |\n";
+	std::cout << "| index      | first name | last name  | nickname   |\n";
+	std::cout << "| ---------- | ---------- | ---------- | ---------- |\n";
 	if (index == 0)
 		return (1);
 	for (i = 0; i < index && i < this->getContactsAmount(); i++)
 	{
-		cout << "| ";
-		this->printField(to_string(i+1));
+		std::cout << "| ";
+		this->printField(std::to_string(i+1));
 		this->printContactInfo(i);
-		cout << endl;
+		std::cout << std::endl;
 	}
-	cout << "| ---------- | ---------- | ---------- | ---------- |\n";
+	std::cout << "| ---------- | ---------- | ---------- | ---------- |\n";
 	return (0);
 }
 
-void PhoneBook::printField(string data)
+void PhoneBook::printField(std::string data)
 {
 	int spacesLen;
-	string newData;
+	std::string newData;
 	
 	spacesLen = this->getTableWidth() - data.length();
 	if (spacesLen >= 0) //print spaces
 	{
 		for (int i = 0; i < spacesLen; i++)
-			cout << " "; 
-		cout << data;
+			std::cout << " "; 
+		std::cout << data;
 	}
 	else if (spacesLen < 0) //truncate string
 	{
 		newData = data.substr(0, this->getTableWidth() - 1);
-		cout << newData << ".";
+		std::cout << newData << ".";
 	}
-	cout << " | ";
+	std::cout << " | ";
 }
 
 void PhoneBook::printCertainInfo(int index)
 {
-	cout << "1) First Name: " << this->getContact(index).getField(1) << endl;
-	cout << "2) Last Name: " << this->getContact(index).getField(2) << endl;
-	cout << "3) Nickname:  " << this->getContact(index).getField(3) << endl;
-	cout << "4) Phone Number: " << this->getContact(index).getField(4) << endl;
-	cout << "5) Darkest secret: " << this->getContact(index).getField(5) << endl;
+	std::cout << "1) First Name: " << this->getContact(index).getField(1) << std::endl;
+	std::cout << "2) Last Name: " << this->getContact(index).getField(2) << std::endl;
+	std::cout << "3) Nickname:  " << this->getContact(index).getField(3) << std::endl;
+	std::cout << "4) Phone Number: " << this->getContact(index).getField(4) << std::endl;
+	std::cout << "5) Darkest secret: " << this->getContact(index).getField(5) << std::endl;
 }

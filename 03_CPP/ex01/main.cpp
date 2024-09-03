@@ -6,11 +6,12 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 13:08:54 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/03 16:14:49 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:04:06 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 void printWarning(char flag, std::string message)
 {
@@ -30,6 +31,7 @@ int main()
 	joe.beRepaired(1);
 	joe.printState();
 
+	ScavTrap bob("Bob", 100, 50, 20);
 	joe.attack("cat");
 	joe.takeDamage(5);
 	// joe.printState();

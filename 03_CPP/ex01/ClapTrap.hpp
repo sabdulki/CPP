@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 13:08:47 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/03 16:15:22 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:08:52 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ class ClapTrap {
 		int attackDamage;
 	public:
 	//default constructor
-		ClapTrap(std::string newName, int newHitPoints, int newEnergyPoints, int newAttackDamage);
+		ClapTrap();
+		ClapTrap(std::string newName);
 	//copy constructor
 		ClapTrap(const ClapTrap& other);
 	//copy assignment operator overload
