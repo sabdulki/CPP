@@ -6,19 +6,25 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 13:08:52 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/03 16:14:38 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/03 21:14:14 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string newName, int newHitPoints, int newEnergyPoints, int newAttackDamage)
+ClapTrap::ClapTrap()
 {
-	std::cout << YELLOW "Constructor called" << DEFAULT << std::endl;
-	name = newName;
-	hitPoints = newHitPoints;
-	energyPoints = newEnergyPoints;
-	attackDamage = newAttackDamage;
+	hitPoints = 10;
+	energyPoints = 10;
+	attackDamage = 0;
+	std::cout << YELLOW "ClapTrap Default constructor called" << DEFAULT << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string newName)
+{
+	if (!newName.empty())
+		name = newName;
+	std::cout << YELLOW "ClapTrap Param constructor called for " << this->name << DEFAULT << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
@@ -28,7 +34,7 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 	energyPoints = other.energyPoints;
 	attackDamage = other.attackDamage;
 	
-	std::cout <<  YELLOW "Copy constructor called" << DEFAULT << std::endl;
+	std::cout <<  YELLOW "ClapTrap Copy constructor called" << DEFAULT << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
@@ -40,13 +46,13 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 		energyPoints = other.energyPoints;
 		attackDamage = other.attackDamage;
 	}
-	std::cout <<  YELLOW "Copy assignment operator overload called" << DEFAULT << std::endl;
+	std::cout <<  YELLOW "ClapTrap Copy assignment operator overload called" << DEFAULT << std::endl;
 	return (*this);
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout <<  YELLOW "Destructor called" << DEFAULT << std::endl;
+	std::cout <<  YELLOW "ClapTrap Destructor called" << DEFAULT << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -75,11 +81,11 @@ void ClapTrap::beRepaired(unsigned int amount)
 	int newHitPoints = this->hitPoints += amount;
 	if (newHitPoints <= 10)
 		this->hitPoints = newHitPoints;
-	else if (newHitPoints > 10)
-	{
-		this->hitPoints = 10;
-		std::cout << YELLOW "The maximum amount of hit points is 10, cannnot be more" << DEFAULT << std::endl;
-	}
+	// else if (newHitPoints > 10)
+	// {
+	// 	this->hitPoints = 10;
+	// 	std::cout << YELLOW "The maximum amount of hit points is 10, cannnot be more" << DEFAULT << std::endl;
+	// }
 	this->energyPoints -= 1;
 	std::cout <<  "ClapTrap " + this->name + " has been repaired, getting " << amount << " hit point back!\n";
 }

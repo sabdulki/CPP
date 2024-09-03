@@ -6,12 +6,12 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 13:08:54 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/03 21:48:13 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/03 21:54:20 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 void printWarning(char flag, std::string message)
 {
@@ -24,12 +24,13 @@ void printWarning(char flag, std::string message)
 
 int main()
 {
-	ScavTrap bob("Bob");
-	bob.attack("cat");
-	bob.printState();
-	bob.takeDamage(5);
-	bob.printState();
-	bob.beRepaired(10);
-	bob.printState();
-	bob.guardGate();
+	FragTrap tom("Tom");
+	tom.printState();
+	tom.attack("cat");
+	tom.printState();
+	tom.takeDamage(5);
+	tom.printState();
+	tom.beRepaired(10);
+	tom.printState();
+	tom.highFivesGuys();
 }

@@ -6,13 +6,12 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 16:31:56 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/03 17:17:18 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/03 22:02:14 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-#include <cctype>  // For std::toupper
 
 int doUpp(std::string str)
 {
@@ -20,7 +19,10 @@ int doUpp(std::string str)
 
 	for (i = str.begin(); i != str.end(); ++i)
 	{
-		*i = toupper(static_cast<unsigned char>(*i));
+		if (*i >= 'a' && *i <= 'z')
+    	{
+    	    *i = *i - ('a' - 'A');
+    	}
 	}
 	std::cout << str << " ";
 	return (0);
