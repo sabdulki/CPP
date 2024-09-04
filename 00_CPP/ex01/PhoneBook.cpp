@@ -6,11 +6,20 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 12:20:27 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/04 14:32:36 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/04 15:02:21 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phoneBook.hpp"
+
+PhoneBook::PhoneBook()
+{
+	contactsAmount = 8;
+	tableWidth = 10;
+	currentIndex = 0;
+}
+
+PhoneBook::~PhoneBook() {}
 
 int PhoneBook::getContactsAmount() {
 	return (contactsAmount);

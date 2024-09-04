@@ -6,11 +6,14 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 13:17:50 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/03 17:22:44 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/04 14:34:34 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+
+Contact::Contact() {}
+Contact::~Contact() {}
 
 bool Contact::setField(int fieldIndex, std::string data)
 {
