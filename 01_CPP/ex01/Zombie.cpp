@@ -6,31 +6,30 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 16:09:46 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/24 17:10:27 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/04 11:38:01 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-// do the constructor here
+Zombie::Zombie(std::string newName)
+{
+	name = newName;
+	std::cout << "Constructor called for zombie named " << this->name << std::endl;
+}
 
-// Zombie::Zombie(string newName) //maybe setter is needed
-// {
-// 	setName(newName);
-// }
+Zombie::~Zombie()
+{
+	// Здесь не нужно вызывать delete для самого себя, это приведет к ошибке.
+	std::cout << "Destructor called for zombie named " << this->name << std::endl;
+}
 
 void Zombie::announce(void)
 {
-	cout << getName() << ": BraiiiiiiinnnzzzZ..." << endl;
+	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-// string Zombie::getName(void)
-// {
-	
-// }
-
-// void setName(string newName)
-// {
-	
-// }
-
+void Zombie::setName(std::string newName)
+{
+	name = newName;
+}

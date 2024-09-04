@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 15:58:22 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/29 18:41:31 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/04 11:33:04 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,17 @@
 
 #include <iostream>
 #include <string>
-#include <cctype>  // For std::toupper
-#include <fstream>  // Required for file handling
-using namespace std;
-
 
 class Zombie {
 	private:
-		string name;
+		std::string name;
 	public:
-		Zombie(string newName);
+		Zombie(std::string newName);
 		~Zombie();
 		void announce(void);
-		string getName(void);
-		void setName(string newName);
 };
+
+Zombie* newZombie( std::string name );
+void randomChump( std::string name );
 
 #endif

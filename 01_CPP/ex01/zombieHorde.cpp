@@ -6,13 +6,13 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 16:25:11 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/24 17:17:42 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/04 11:41:09 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* zombieHorde(int N, string name)
+Zombie* zombieHorde(int N, std::string name)
 {
 	Zombie* arr;
 
@@ -26,7 +26,6 @@ Zombie* zombieHorde(int N, string name)
 	
 	for (int i = 0; i < N; i++)
 	{
-		//call constructor for each object of Array
 		arr[i].setName(name);
 	}
 	return (arr);

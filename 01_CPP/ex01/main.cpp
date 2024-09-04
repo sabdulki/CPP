@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 15:57:48 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/29 18:50:56 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/04 11:40:06 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,6 @@ int main()
 		zombieArr[i].announce();
 	}
 
-	for (int i = 0; i < N; i++)
-	{
-		zombieArr[i].~Zombie();
-	}
 	delete[] zombieArr;
 	return (0);
 }

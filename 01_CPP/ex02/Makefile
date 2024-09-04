@@ -6,7 +6,7 @@
 #    By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/24 17:18:31 by sabdulki          #+#    #+#              #
-#    Updated: 2024/08/24 17:29:01 by sabdulki         ###   ########.fr        #
+#    Updated: 2024/09/04 11:46:32 by sabdulki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ OBJS = $(SRCS:.cpp=.o)
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 
-NAME = brain
+NAME = hiBrain
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
