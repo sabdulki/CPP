@@ -6,24 +6,29 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 18:54:58 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/29 19:11:01 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/04 13:24:58 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(string weaponType)
+Weapon::Weapon(std::string weaponType)
 {
 	setType(weaponType);
+	std::cout << "Weapon param constructor called for " << this->type<< std::endl;
 }
 
-const string& Weapon::getType() const
+Weapon::~Weapon()
+{
+	std::cout << "Weapon destructor called for " << this->type << std::endl;
+}
+
+const std::string& Weapon::getType() const
 {
 	return (type);
 }
 
-void Weapon::setType(string newType)
+void Weapon::setType(std::string newType)
 {
 	type = newType;
-	return ;
 }
