@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 13:54:04 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/30 17:42:55 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/04 19:00:24 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 #define FIXED_HPP
 
 #include <iostream>
-#include <string>
 #include <fstream>
-using namespace std;
 
 /*
 decimal number: 12.75 
