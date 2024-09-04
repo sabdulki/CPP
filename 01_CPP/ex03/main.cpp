@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 18:01:33 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/27 16:37:35 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/04 13:31:28 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ and we check if weapon is null before trying to attack.
 
 #include "HumanA.hpp"
 #include "HumanB.hpp"
-// #include "Weapon.hpp"
 
 int main()
 {
