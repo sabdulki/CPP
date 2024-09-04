@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 01:08:32 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/29 17:07:43 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/04 14:17:54 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,42 +15,45 @@
 Harl::Harl() 
 {
 	arrSize = 4;
-	levelsArr = new string[arrSize];
+	levelsArr = new std::string[arrSize];
 	levelsArr[0] = "DEBUG";
 	levelsArr[1] = "INFO";
 	levelsArr[2] = "WARNING";
 	levelsArr[3] = "ERROR";
+	std::cout << "Default constructor called\n";
 }
 
 Harl::~Harl() 
 {
 	delete[] levelsArr;
+	std::cout << "Default destructor called\n";
 }
 
 void Harl::debug( void )
 {
-	cout << "Debug message\n";
+	std::cout << "Debug message\n";
 }
 
 void Harl::info( void )
 {
-	cout << "Info message\n";
+	std::cout << "Info message\n";
 }
 
 void Harl::warning( void )
 {
-	cout << "Warning message\n";
+	std::cout << "Warning message\n";
 }
 
 void Harl::error( void )
 {
-	cout << "Error message\n";
+	std::cout << "Error message\n";
 }
 
-void Harl::complain(string level)
+void Harl::complain(std::string level)
 {
 	// create arr of pointers to strings
-	void (Harl::*pointersToFuncs[])(void) = {
+	void (Harl::*pointersToFuncs[])(void) = 
+	{
 		&Harl::debug,
 		&Harl::info,
 		&Harl::warning,
@@ -65,7 +68,6 @@ void Harl::complain(string level)
 			return ;
 		}
 	}
-	cout << "Wrong type\n";
-	
+	std::cout << "Wrong type\n";
 	return ;
 }

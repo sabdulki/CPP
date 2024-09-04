@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 01:08:35 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/29 17:09:34 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/04 14:15:25 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 #define HARL_HPP
 
 #include <iostream>
-#include <string>
 #include <fstream>
-using namespace std;
 
 class Harl {
 	private:
@@ -26,11 +24,11 @@ class Harl {
  		void error( void );
 
 	public:
-		void complain(string level);
-		int arrSize;
-		string* levelsArr;
 		Harl();
 		~Harl();
+		void complain(std::string level);
+		std::string* levelsArr;
+		int arrSize;
 };
 
 #endif
