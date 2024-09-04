@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 15:58:22 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/04 11:40:44 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/04 14:35:52 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Zombie {
 	private:
 		std::string name;
 	public:
-		Zombie() {};
+		Zombie();
 		Zombie (std::string newName); 
 		~Zombie();
 		void announce(void);

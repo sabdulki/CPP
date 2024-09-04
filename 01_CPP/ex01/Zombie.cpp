@@ -6,11 +6,13 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 16:09:46 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/04 11:38:01 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/04 14:35:45 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+Zombie::Zombie() {}
 
 Zombie::Zombie(std::string newName)
 {

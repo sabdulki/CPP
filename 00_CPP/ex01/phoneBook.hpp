@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 17:37:56 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/03 17:22:32 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/04 14:33:45 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@
 
 class PhoneBook {
 	private:
-		const int contactsAmount;
-		const int tableWidth;
+		int contactsAmount;
+		int tableWidth;
 		int currentIndex;
 		Contact allContacts[8];
 	public:
-		PhoneBook(int contacts, int width, int index) : contactsAmount(contacts), tableWidth(width), currentIndex(index) {};
-		~PhoneBook() {};
+		PhoneBook();
+		~PhoneBook();
 		Contact& getContact(int index);
 		void 	setContact(Contact& newContact, int index);
 		int 	getContactsAmount();
