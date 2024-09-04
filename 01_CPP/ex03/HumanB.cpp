@@ -6,28 +6,33 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:00:55 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/29 19:20:51 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/04 13:21:32 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(string newName)
+HumanB::HumanB(std::string newName)
 {
+	std::cout << "Param constructor called for " << newName << std::endl;
 	name = newName;
 	weaponB = nullptr;
 }
 
-HumanB::void setWeapon(Weapon &newWeapon)
+HumanB::~HumanB()
 {
-	weaponB = &newWeapon;
-	return ;
+	std::cout << "HumanB destructor called for " << this->name << std::endl;
 }
 
-void attack() {
+void HumanB::setWeapon(Weapon &newWeapon)
+{
+	weaponB = &newWeapon;
+}
+
+void HumanB::attack() {
 	if (weaponB) {
-    	cout << name << " attacks with their " << weaponB->getType() << endl;
+    	std::cout << name << " attacks with their " << weaponB->getType() << std::endl;
 	} else {
-   		cout << name << " doesn't have a weapon!" << endl;
+   		std::cout << name << " doesn't have a weapon!" << std::endl;
 	}
 }

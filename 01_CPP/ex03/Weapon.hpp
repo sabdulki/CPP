@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 18:02:43 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/04 11:57:03 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/04 13:23:05 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,11 @@ class Weapon {
 	/* cannot change the var through reference */
 		Weapon() {};
 		Weapon(std::string weaponType);
+		~Weapon();
 		/* getType() will return a const std::string& to prevent copying*/
-		const std::string& getType() const; //{
-		// 	return (type);
-		// }
-		void setType(std::string newType); //{
-		// 	type = newType;
-		// }
+		const std::string& getType() const;
+		void setType(std::string newType);
+
 	
 };
 

@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:40:32 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/29 19:29:57 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/04 13:20:29 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,14 @@
 #include <iostream>
 #include <string>
 #include "Weapon.hpp"
-using namespace std;
 
 class HumanA{
+	private:
+		std::string name;
+		Weapon *weaponA;
 	public:
-		string name;
-		Weapon &weaponA = nullptr;
-		HumanA(string newName, Weapon &newWeapon): name{newName}; weaponA{newWeapon}; {};
-		~HumanA() {};
-		void attack(); //{
-        //     cout << name << " attacks with their " << weaponA.getType() << endl;
-		// }
+		HumanA(std::string newName, Weapon &newWeapon);
+		~HumanA();
+		void attack();
 };
-
 #endif
