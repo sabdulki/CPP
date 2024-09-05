@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 23:58:23 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/31 23:43:22 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/05 20:32:29 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ Fixed Fixed::operator*(const Fixed& other)
 Fixed Fixed::operator/(const Fixed& other) 
 {
 	Fixed result;
-	result.fixedPointNumberValue = (this->fixedPointNumberValue / other.fixedPointNumberValue); // / pow(2, this->fractionalBits);
+	result.fixedPointNumberValue = ((this->fixedPointNumberValue / pow(2, this->fractionalBits)) / other.fixedPointNumberValue); // / pow(2, this->fractionalBits);
 	return result;
 }
