@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 13:54:04 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/30 18:12:16 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/05 15:08:11 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include <string>
 #include <fstream>
 #include <cmath>
-using namespace std;
 
 /*
 decimal number: 12.75 

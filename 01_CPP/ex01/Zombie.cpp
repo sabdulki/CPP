@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 16:09:46 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/04 14:35:45 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/05 16:19:22 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ Zombie::Zombie(std::string newName)
 
 Zombie::~Zombie()
 {
-	// Здесь не нужно вызывать delete для самого себя, это приведет к ошибке.
 	std::cout << "Destructor called for zombie named " << this->name << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 01:08:32 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/04 14:17:54 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/05 16:35:42 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void Harl::error( void )
 
 void Harl::complain(std::string level)
 {
-	// create arr of pointers to strings
 	void (Harl::*pointersToFuncs[])(void) = 
 	{
 		&Harl::debug,

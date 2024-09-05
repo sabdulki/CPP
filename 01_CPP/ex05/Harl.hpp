@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 01:08:35 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/04 14:15:25 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/05 16:37:30 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define HARL_HPP
 
 #include <iostream>
-#include <fstream>
 
 class Harl {
 	private:

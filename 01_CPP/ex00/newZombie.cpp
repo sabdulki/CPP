@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 16:08:29 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/04 11:25:47 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/05 16:06:01 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ Zombie* newZombie(std::string name)
 {
 	std::cout << "new zombie func called\n";
 	Zombie* zombie1 = new Zombie(name);
+	// std::cout << "zombie1 declared in newZombie func has memory address: " << &zombie1 << std::endl;
 	return (zombie1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 18:01:33 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/04 13:31:28 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/05 16:24:48 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ and we check if weapon is null before trying to attack.
 int main()
 {
 	{
+		std::cout << "\t--- Bob ---\n";
 		Weapon club = Weapon("crude spiked club");
 		HumanA bob("Bob", club);
 		bob.attack();
@@ -39,6 +40,7 @@ int main()
 		bob.attack();
 	}
 	{
+		std::cout << "\t--- Jim ---\n";
 		Weapon club = Weapon("crude spiked club");
 		HumanB jim("Jim");
 		jim.setWeapon(club);
