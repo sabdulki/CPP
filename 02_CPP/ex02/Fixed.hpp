@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 13:54:04 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/08/31 00:53:45 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/06 15:39:58 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 #define FIXED_HPP
 
 #include <iostream>
-#include <string>
-#include <fstream>
+#include <climits>
 #include <cmath>
-using namespace std;
 
 /*
 decimal number: 12.75 
@@ -52,8 +50,26 @@ class Fixed {
 		Fixed operator*(const Fixed& other);
 		Fixed operator/(const Fixed& other);
 		
+		/* A constant member function cannot modify the state of the calling object */
+		bool operator>(const Fixed& other) const;
+		bool operator<(const Fixed& other) const;
+		bool operator>=(const Fixed& other) const;
+		bool operator<=(const Fixed& other) const;
+		bool operator==(const Fixed& other) const;
+		bool operator!=(const Fixed& other) const;
 
-};
+		Fixed operator++();
+		Fixed operator--();
+		Fixed operator++(int);
+		Fixed operator--(int);
+
+		static Fixed& max(Fixed &obj1, Fixed &obj2);
+		static const Fixed& max(const Fixed &obj1, const Fixed &obj2);
+		static Fixed& min(Fixed &obj1, Fixed &obj2);
+		static const Fixed& min(const Fixed &obj1, const Fixed &obj2);
+		
+		
+};		
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed); // must be binary operator
 
