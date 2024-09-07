@@ -6,7 +6,7 @@
 #    By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/30 13:51:32 by sabdulki          #+#    #+#              #
-#    Updated: 2024/08/31 00:36:52 by sabdulki         ###   ########.fr        #
+#    Updated: 2024/09/06 18:24:28 by sabdulki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRCS = main.cpp Fixed.cpp funcs.cpp operators.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = fixed3
 
