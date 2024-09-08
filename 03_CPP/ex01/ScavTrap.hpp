@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 16:17:20 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/03 21:00:29 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/07 18:33:59 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
-
 
 class ScavTrap : public ClapTrap {
 	public:
@@ -27,6 +26,5 @@ class ScavTrap : public ClapTrap {
 		void guardGate();
 		void attack(const std::string& target);
 };
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 21:38:34 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/03 21:48:29 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/08 18:27:09 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,9 @@ FragTrap::~FragTrap()
 
 void FragTrap::highFivesGuys(void)
 {
+	if (this->energyPoints == 0)
+		return(printWarning('E', "give high five"));
+	if (this->hitPoints <= 0)
+		return(printWarning('H', "give high five"));
 	std::cout << "FragTrap's " << this->name << " gives high five!" << std::endl;
 }
