@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 13:53:25 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/06 15:21:28 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/06 15:50:12 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,8 @@ int main()
 		
 	std::cout << "------------ my tests ------------\n";
 	Fixed a(5);
-	Fixed const b(2.5f);
+	// Fixed const b(2.5f);
+	Fixed const b(0);
 	std::cout << "a: " << a << std::endl;
 	std::cout << "b: " << b << std::endl;
 	
