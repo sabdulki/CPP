@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 16:36:48 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/09 16:44:59 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/10 19:37:13 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 
 /* -------------- Orthodox Canonical Form -------------- */
 
-Dog::Dog(): Animal()
+Dog::Dog() : Animal()
 {
-	std::cout << "Dog default constructor called" << std::endl;
+	std::cout << "Dog Default constructor called" << std::endl;
 	this->setType("Dog");	
 	this->_brain = new Brain();
 }
 
-Dog::Dog(const Dog &obj): Animal(obj)
+Dog::Dog(const Dog &obj) : Animal(obj)
 {
-	std::cout << "Dog copy constructor called" << std::endl;
+	std::cout << "Dog Copy constructor called" << std::endl;
 	if (this != &obj) {
 		this->_brain = new Brain();	
 		*this->_brain = *obj._brain; 
@@ -33,7 +33,7 @@ Dog::Dog(const Dog &obj): Animal(obj)
 
 const Dog &Dog::operator=(const Dog &obj)
 {
-	std::cout << "Dog copy assignment operator called" << std::endl;
+	std::cout << "Dog copy Assignment operator called" << std::endl;
 	if (this != &obj) {
 		Animal::operator=(obj);
 		*this->_brain = *obj._brain;
@@ -43,7 +43,7 @@ const Dog &Dog::operator=(const Dog &obj)
 
 Dog::~Dog()
 {
-	std::cout << "Dog destructor called" << std::endl;
+	std::cout << "Dog Destructor called" << std::endl;
 	delete _brain;
 }
 

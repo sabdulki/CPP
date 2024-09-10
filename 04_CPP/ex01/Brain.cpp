@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 16:36:06 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/09 16:44:19 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/10 20:54:46 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ Brain::~Brain()
 /// @return 
 const std::string &Brain::getIdea(int index) const
 {
-	std::cout << "Brain getIdea(" << index << ") called" << std:: endl;
-	if (index >= 0 && index < numOfIdeas) {
+	std::cout << YELLOW << "Brain getIdea(" << index << ") called" << DEFAULT << std:: endl;
+	if (index >= 0 && index < IdeasAmount) {
 		return this->_ideas[index];
 	} else if (_lastIdeaIndex > 0)
 		return this->_ideas[this->_lastIdeaIndex];
@@ -57,8 +57,8 @@ const std::string &Brain::getIdea(int index) const
 
 void Brain::addIdea(const std::string idea)
 {
-	std::cout << "Brain addIdea(" << idea << ") function called" << std::endl;
-	if (!idea.empty() && _lastIdeaIndex < numOfIdeas) {
+	std::cout << GREEN << "Brain addIdea(" << idea << ") function called" << DEFAULT << std::endl;
+	if (!idea.empty() && _lastIdeaIndex < IdeasAmount) {
 		this->_ideas[++this->_lastIdeaIndex] = idea;
 	}
 }

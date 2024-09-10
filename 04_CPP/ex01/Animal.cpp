@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 16:35:58 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/09 16:44:00 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/10 19:50:59 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,26 @@
 Animal::Animal()
 {
 	this->setType("Default_animal");
-	std::cout << "Animal default constructor called" << std::endl;
+	std::cout << "Animal Default constructor called" << std::endl;
 }
 
 Animal::Animal(const Animal &obj)
 {
-	std::cout << "Animal copy constructor called" << std::endl;
+	std::cout << "Animal Copy constructor called" << std::endl;
 	*this = obj;
 }
 
 const Animal &Animal::operator=(const Animal &obj)
 {
-	std::cout << "Animal copy assignment operator called" << std::endl;
-	if (this != &obj) {
+	std::cout << "Animal copy Assignment operator called" << std::endl;
+	if (this != &obj)
 		this->setType(obj.getType());
-	}
 	return *this;
 }
 
 Animal::~Animal()
 {
-	std::cout << "Animal destructor called" << std::endl;
+	std::cout << "Animal Destructor called" << std::endl;
 }
 
 /* -------------- Methods -------------- */
@@ -50,10 +49,9 @@ std::string Animal::getType(void) const
 
 void Animal::setType(const std::string type)
 {
-	std::cout << "Animal setType() function was called" << std::endl;
-	if (!type.empty()) {
+	if (!type.empty())
 		this->_type = type;
-	}
+	std::cout << "Animal setType() function was called. The type is " << this->_type << std::endl;
 }
 
 void Animal::makeSound(void) const

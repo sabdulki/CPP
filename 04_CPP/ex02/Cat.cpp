@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 16:54:20 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/09 16:54:52 by sabdulki         ###   ########.fr       */
+/*   Created: 2024/09/09 16:36:13 by sabdulki          #+#    #+#             */
+/*   Updated: 2024/09/10 20:39:24 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@
 
 Cat::Cat(): Animal()
 {
+	std::cout << "Cat Default constructor called" << std::endl;
 	this->setType("Cat");	
 	this->_brain = new Brain();
-	std::cout << "Cat default constructor is called" << std::endl;
 }
 
 Cat::Cat(const Cat &obj): Animal(obj)
 {
+	std::cout << "Cat copy constructor called" << std::endl;
 	if (this != &obj) {
-		std::cout << "Cat copy constructor called" << std::endl;
-		this->_brain = new Brain();	
+		this->_brain = new Brain(); //call copy constr for brain	
 		*this->_brain = *obj._brain; 
 	}
 }

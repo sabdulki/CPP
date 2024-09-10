@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 16:05:06 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/09 16:21:00 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:45:32 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,5 @@ Dog::~Dog()
 
 void Dog::makeSound(void) const
 {
-	std::cout << "Dog makeSound func was called: Dog sounds like 'gav gav GAV!!'" << std::endl;
-}
-
-std::string Dog::getType(void) const
-{
-	std::cout << "Dog getType() function was called" << std::endl;
-	return this->type;
+	std::cout << GREEN << "Dog makeSound func was called. Dog sounds like 'gav gav GAV!!'" << DEFAULT << std::endl;
 }

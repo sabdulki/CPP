@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 16:11:35 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/09 16:14:44 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/10 17:13:05 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,18 @@ WrongAnimal::~WrongAnimal()
 
 std::string WrongAnimal::getType(void) const
 {
-	std::cout << "WrongAnimal getType() function was called" << std::endl;
-	return this->_type;
+	std::cout << YELLOW << "WrongAnimal getType() function called. The type is " << this->type << DEFAULT << std::endl;
+	return this->type;
 }
 
 void WrongAnimal::setType(const std::string type)
 {
-	std::cout << "WrongAnimal setType() function was called" << std::endl;
-	if (!type.empty()) {
-		this->_type = type;
-	}
+	// std::cout << "WrongAnimal setType() function called" << std::endl;
+	if (!type.empty())
+		this->type = type;
 }
 
 void WrongAnimal::makeSound(void) const
 {
-	std::cout << "WrongAnimal WRONG_SOUND" << std::endl;
+	std::cout << GREEN << "Default WRONG Animal makeSound func was called. Default WRONG animal sound is WRONG NONE." << DEFAULT << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:51:03 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/09 16:08:25 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:45:37 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,5 @@ Cat::~Cat()
 
 void Cat::makeSound(void) const
 {
-	std::cout << "Cat makeSound func was called. Cat sounds like 'miau miau mrrrr'" << std::endl;
+	std::cout << GREEN << "Cat makeSound func was called. Cat sounds like 'miau miau mrrrr'" << DEFAULT << std::endl;
 }
-
-// std::string Cat::getType(void) const
-// {
-// 	std::cout << "Cat getType() function was called" << std::endl;
-// 	return this->_type;
-// }

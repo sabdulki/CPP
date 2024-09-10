@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 16:16:09 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/09 16:19:28 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/10 17:16:04 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,4 @@ WrongCat::~WrongCat()
 void WrongCat::makeSound(void) const
 {
 	std::cout << "WrongCat sounds like this 'WrOnG MiAwww'" << std::endl;
-}
-
-std::string WrongCat::getType(void) const
-{
-	std::cout << "WrongCat getType() function was called" << std::endl;
-	return this->_type;
 }
