@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 16:37:03 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/11 11:42:31 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/11 13:09:16 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,8 @@ void deleteTest()
 int main (void)
 {
 	subjectTest();
-	// arrayTest();
-	// deepCopyTest();
-	// deleteTest();
-	
-	// std::cout << "----------------- external tests -----------------\n";
-
+	arrayTest();
+	deepCopyTest();
+	deleteTest();
 	std::cout << "-----------------------------------------------------" << std::endl;
-	// oldMainTest();
 }
