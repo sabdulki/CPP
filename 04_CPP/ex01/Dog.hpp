@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 16:36:53 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/09 16:38:44 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/11 11:22:03 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,17 @@
 
 class Dog: public Animal
 {
-	public:
-		Dog();
-		~Dog();
-		Dog(const Dog &obj);
-		const Dog &operator=(const Dog &obj);
-		void makeSound(void) const;
-
-	// getters:
-		std::string getType(void) const;
-		Brain *getBrain(void) const;
 	private:
 		Brain *_brain;
+	public:
+		Dog();
+		Dog(const Dog &obj);
+		const Dog &operator=(const Dog &obj);
+		~Dog();
+
+		void makeSound(void) const;
+		std::string getType(void) const;
+		Brain *getBrain(void) const;
 };
 
 #endif

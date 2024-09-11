@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:34:50 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/10 17:17:13 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/11 11:15:29 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,18 @@ void externalTests()
 	std::cout << "----------------- external tests -----------------\n";
 	const WrongAnimal *meta = new WrongAnimal();
 	const WrongAnimal *wrongKitty = new WrongCat();
+	const WrongCat *wCat = new WrongCat();
 
 	std::cout << meta->getType() << " " << std::endl;
 	std::cout << wrongKitty->getType() << " " << std::endl;
+	std::cout << wCat->getType() << " " << std::endl;
 	wrongKitty->makeSound();
 	meta->makeSound();
+	wCat->makeSound();
 
 	delete wrongKitty;
 	delete meta;
+	delete wCat;
 }
 
 int main()

@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 16:36:48 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/10 19:37:13 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/11 11:43:29 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ Dog::~Dog()
 
 void Dog::makeSound(void) const
 {
-	std::cout << "Dog makeSound was called: Meow..." << std::endl;
+	std::cout << "Dog makeSound was called: Gav!..." << std::endl;
 }
 
 std::string Dog::getType(void) const

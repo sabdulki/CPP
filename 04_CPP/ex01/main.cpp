@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 16:37:03 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/09/10 22:07:57 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/09/11 11:34:52 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,15 @@ void arrayTest()
 void deepCopyTest()
 {
 	std::cout << "----------------- deepCopy test -----------------\n";
-	Cat kitty1 = Cat();
-	Brain* brain1 = kitty1.getBrain();
-	brain1.[0] = "new idea";
-	std::cout << "\tcat1 brain: " << kitty1.getBrain() << std::endl;
-	Cat kitty2 (kitty1);
-	std::cout << "\tcat2 brain: " << kitty2.getBrain() << std::endl;
-	kitty1 = kitty2;
-	std::cout << "\tcat3 brain: " << kitty1.getBrain() << std::endl;
 	
+	Dog basic;
+	{
+		Dog tmp = basic;
+		std::cout << "\ttmp    :" << tmp.getBrain() << std::endl;
+		std::cout << "\tbasic1 :" << basic.getBrain() << std::endl;
+	}
+	std::cout << "\tbasic2  :" << basic.getBrain() << std::endl;
+
 }
 
 void deleteTest()
@@ -75,5 +75,10 @@ int main (void)
 	deepCopyTest();
 	deleteTest();
 	std::cout << "-----------------------------------------------------" << std::endl;
+	
+
+	
+	
+	
 	
 }
