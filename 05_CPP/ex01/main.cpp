@@ -6,11 +6,12 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:07:19 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/01 15:43:16 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:29:45 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 //if an exception occured, the constructor stops ->
 //the instant of class wasn't create.
@@ -22,18 +23,16 @@ int main()
 	{
 		std::cout << "------- test 1 -------\n";
 		Bureaucrat b1("Bob", 1);
-		b1.incrementGrade();
-		std::cout << "grade: " << b1.getGrade() << std::endl;
-		b1.decrementGrade();
+		Form f1("form1", 30, 5);
 		std::cout << b1 << std::endl;
+		std::cout << f1 << std::endl;
 
 		std::cout << "------- test 2 -------\n";
-		Bureaucrat b2("Ahmed", 150);
-		std::cout << b2.getName() << std::endl;
-		std::cout << b2.getGrade() << std::endl;
+		f1.beSigned(b1);
+		b1.signForm(f1);
 	
-		std::cout << "------- test 3 -------\n";
-		Bureaucrat b3("Mohammad", 151);
+		// std::cout << "------- test 3 -------\n";
+		// Bureaucrat b3("Mohammad", 151);
 	}
 	catch (const std::out_of_range& e)
 	{

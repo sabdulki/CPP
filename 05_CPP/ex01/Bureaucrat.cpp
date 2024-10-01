@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 19:14:33 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/01 15:40:49 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:35:58 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,18 @@ const std::string Bureaucrat::getName()
 	return (this->name);
 }
 
-int Bureaucrat::getGrade()
+const int Bureaucrat::getGrade() const
 {
 	return (this->grade);
+}
+
+void Bureaucrat::signForm(Form& f)
+{
+	// If the form got signed
+	if (f.getSign())
+		std::cout << this->name << " signed " << f.getName() << std::endl; 
+	else
+		std::cout << this->name << " couldn’t sign " << f.getName() << " because bureaucrat's grade is too low or high" << std::endl;
 }
 
 void Bureaucrat::incrementGrade()

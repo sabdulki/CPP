@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 19:14:31 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/01 15:40:56 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:35:48 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "Form.hpp"
+class Form;
 
 class Bureaucrat 
 {
 	private:
 		std::string name;
-		int grade;
+		int grade; //change to const!!!
 	public:
 		Bureaucrat(const std::string newName, int newGrade);
 		Bureaucrat();
@@ -29,12 +31,13 @@ class Bureaucrat
 		Bureaucrat& operator=(const Bureaucrat &other);
 		~Bureaucrat();
 		const std::string getName();
-		int getGrade();
+		const int getGrade() const;
 		// int setGrade(int newGrade);
 		void GradeTooHighException(int newGrade);
 		void GradeTooLowException(int newGrade);
 		void  incrementGrade();
 		void  decrementGrade();
+		void signForm(Form& f);
 };
 
 std::ostream& operator<<(std::ostream& os, Bureaucrat& b);
