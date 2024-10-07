@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 19:14:31 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/01 18:35:48 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/07 16:07:25 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,36 @@ class Form;
 class Bureaucrat 
 {
 	private:
-		std::string name;
-		int grade; //change to const!!!
+		const std::string name;
+		int grade;
 	public:
-		Bureaucrat(const std::string newName, int newGrade);
 		Bureaucrat();
+		Bureaucrat(const std::string newName, int newGrade);
 		Bureaucrat(const Bureaucrat &other);
 		Bureaucrat& operator=(const Bureaucrat &other);
 		~Bureaucrat();
 		const std::string getName();
-		const int getGrade() const;
-		// int setGrade(int newGrade);
-		void GradeTooHighException(int newGrade);
-		void GradeTooLowException(int newGrade);
+		int getGrade() const;
 		void  incrementGrade();
 		void  decrementGrade();
+			//new method
 		void signForm(Form& f);
+    	class GradeTooHighException: public std::exception
+		{
+			public:
+				GradeTooHighException(const char *str):_msg(str) { }
+				const char *what() const throw() { return _msg; }
+			private:
+				const char *_msg;	
+		};
+		class GradeTooLowException: public std::exception
+		{
+			public:
+				GradeTooLowException(const char *str):_msg(str) { }
+				const char *what(void) const throw() { return _msg; }
+			private:
+				const char *_msg;	
+		};
 };
 
 std::ostream& operator<<(std::ostream& os, Bureaucrat& b);

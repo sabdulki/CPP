@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:07:19 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/01 18:29:45 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/07 16:20:42 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,21 @@ int main()
 	try
 	{
 		std::cout << "------- test 1 -------\n";
-		Bureaucrat b1("Bob", 1);
+		Bureaucrat bob("Bob", 31);
 		Form f1("form1", 30, 5);
-		std::cout << b1 << std::endl;
+		Form f2("form2", 60, 5);
+		std::cout << bob << std::endl;
 		std::cout << f1 << std::endl;
 
 		std::cout << "------- test 2 -------\n";
-		f1.beSigned(b1);
-		b1.signForm(f1);
+		f2.beSigned(bob);
+		f1.beSigned(bob);
+		bob.signForm(f1);
 	
-		// std::cout << "------- test 3 -------\n";
-		// Bureaucrat b3("Mohammad", 151);
+		std::cout << "------- test 3 -------\n";
+		Bureaucrat b3("Mohammad", 151);
 	}
-	catch (const std::out_of_range& e)
-	{
+	catch (std::exception& e) {
 		std::cout << "Caught an exception: " << e.what() << std::endl;
 	}
 	return (0);
