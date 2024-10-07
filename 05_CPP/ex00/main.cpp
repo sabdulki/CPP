@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:07:19 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/01 15:43:16 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/07 15:23:47 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
 	{
 		std::cout << "------- test 1 -------\n";
 		Bureaucrat b1("Bob", 1);
-		b1.incrementGrade();
+		// b1.incrementGrade();
 		std::cout << "grade: " << b1.getGrade() << std::endl;
 		b1.decrementGrade();
 		std::cout << b1 << std::endl;
@@ -33,11 +33,18 @@ int main()
 		std::cout << b2.getGrade() << std::endl;
 	
 		std::cout << "------- test 3 -------\n";
-		Bureaucrat b3("Mohammad", 151);
+		Bureaucrat sara("Sara", 50);
+		std::cout << sara << std::endl;
+	
+		std::cout << "------- test 4 -------\n";
+		Bureaucrat b3("Mohammad", 1111);
+		std::cout << b3 << std::endl;
 	}
-	catch (const std::out_of_range& e)
-	{
-		std::cout << "Caught an exception: " << e.what() << std::endl;
+	catch (const Bureaucrat::GradeTooLowException& e) {
+		std::cout << "Too low exception: " << e.what() << std::endl;
+	}
+	catch (const Bureaucrat::GradeTooHighException& e) {
+		std::cout << "Too high exception: " << e.what() << std::endl;
 	}
 	return (0);
 }
