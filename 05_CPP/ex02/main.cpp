@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:07:19 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/08 16:28:18 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/10 14:16:34 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,23 @@ int main()
 	{
 		std::cout << "------- test 1 -------\n";
 		Bureaucrat bob("Bob", 31);
-		AForm f1("form1", 30, 5);
-		AForm f2("form2", 60, 5);
+		// AForm f1("form1", 30, 5);
+		// AForm f2("form2", 60, 5);
 		std::cout << bob << std::endl;
-		std::cout << f1 << std::endl;
+		// std::cout << f1 << std::endl;
 
 		std::cout << "------- test 2 -------\n";
-		f2.beSigned(bob);
-		f1.beSigned(bob);
-		bob.signForm(f1);
+		// f2.beSigned(bob);
+		// f1.beSigned(bob);
+		// bob.signForm(f1);
 
 		ShrubberyCreationForm shrForm("home");
 		std::cout << "------- test 3 -------\n";
 		Bureaucrat b3("Mohammad", 15);
 
-		std::cout << "------- test 4 -------\n";
+		// std::cout << "------- test 4 -------\n";
+		shrForm.beSigned(b3);
+		b3.signForm(shrForm);
 		b3.executeForm(shrForm);
 	}
 	catch (std::exception& e) {

@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 19:14:33 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/08 15:10:23 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/10 14:23:37 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void Bureaucrat::executeForm(AForm const & form)
 {
 	if (!form.execute(*this))
-		std::cout << "Buraucrat " << this->getName() << " executed " << form.getType() << std::endl;
+		std::cout << "\tBuraucrat " << this->getName() << " executed " << form.getName() << std::endl;
 	else
-		std::cout << "Buraucrat " << this->getName() << " failed to executed " << form.getType() << std::endl;
+		std::cout << "\tBuraucrat " << this->getName() << " failed to executed " << form.getName() << std::endl;
 }
 
 void Bureaucrat::signForm(AForm& f)
@@ -31,12 +31,12 @@ void Bureaucrat::signForm(AForm& f)
 
 Bureaucrat::Bureaucrat()
 {
-	std::cout << "Default Constructor called\n";
+	std::cout << "Bureaucrat Default Constructor called\n";
 }
 
 Bureaucrat::Bureaucrat(const std::string newName, int newGrade) : name(newName)
 {
-	std::cout << "Param constructor called for " << this->name << "\n";
+	std::cout << "Bureaucrat Param constructor called for " << this->name << "\n";
 	if (newGrade < 1)
 		throw (GradeTooHighException("Construction failed"));
 	else if (newGrade > 150)

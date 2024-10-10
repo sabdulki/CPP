@@ -6,27 +6,27 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:56:31 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/08 18:05:21 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/10 15:57:32 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-const std::string AForm::getType() const
-{
-	return (this->type);
-}
+// std::string AForm::getTarget() const
+// {
+// 	return (this->target);
+// }
 
 AForm::AForm() 
-	: name("Base form"), isSigned(false), signGrade(150), executeGrade(150), type("Default base form"), target("") 
+	: name("Base form"), isSigned(false), signGrade(150), executeGrade(150)
 {
-	std::cout << "Default constructor called\n";
+	std::cout << "Base Default constructor called\n";
 }
 
 AForm::AForm(const std::string newName, int newSignGrade, int newExecuteGrade) 
-	: name(newName), signGrade(newSignGrade), executeGrade(newExecuteGrade), type("Base form"), target("None")
+	: name(newName), signGrade(newSignGrade), executeGrade(newExecuteGrade)
 {
-	std::cout << "Param constructor called for " << this->name << "\n";
+	std::cout << "Base Param constructor called for " << this->name << "\n";
 	if (signGrade < 1 || executeGrade < 1)
 		throw (GradeTooHighException("Construction failed. The grade is too high"));
 	else if (signGrade > 150 || executeGrade > 150)
@@ -37,7 +37,7 @@ AForm::AForm(const std::string newName, int newSignGrade, int newExecuteGrade)
 
 AForm::AForm(const AForm& other) : name(other.name), signGrade(other.signGrade), executeGrade(other.executeGrade)
 {
-	std::cout << "Copy Constructor called\n";
+	std::cout << "Base Copy Constructor called\n";
 	if (signGrade < 1 || executeGrade < 1)
 		throw (GradeTooHighException("Construction failed. The grade is too high"));
 	else if (signGrade > 150 || executeGrade > 150)
@@ -46,7 +46,7 @@ AForm::AForm(const AForm& other) : name(other.name), signGrade(other.signGrade),
 }
 AForm& AForm::operator=(const AForm& other)
 {
-	std::cout << "Copy Assignment operator called\n";
+	std::cout << "Base Copy Assignment operator called\n";
 	if (this != &other)
 	{
 		//cannot reassign const name.
@@ -58,7 +58,7 @@ AForm& AForm::operator=(const AForm& other)
 
 AForm::~AForm()
 {
-	std::cout << "Destructor called for " << this->name << std::endl;
+	std::cout << "Base Destructor called for " << this->name << std::endl;
 }
 
 const std::string AForm::getName() const
@@ -101,21 +101,21 @@ std::ostream& operator<<(std::ostream &os, AForm& f)
 	return (os);
 }
 
-std::string AForm::getTarget() const
-{
-	return (this->target);
-}
+// std::string AForm::getTarget() const
+// {
+// 	return (this->target);
+// }
 
 int AForm::execute(Bureaucrat const & executor) const
 {
 	if (this->getSignStatus() == false)
 	{
-		std::cout << "The " << this->getType() <<  " is not signed yet\n";
+		std::cout << "The " << this->getName() <<  " is not signed yet\n";
 		return (1);
 	}
-	if (this->getExecuteGrade() > executor.getGrade())
+	if (this->getExecuteGrade() < executor.getGrade()) //137 15
 	{
-		const std::string message = "executor cannot sign " + this->getType() + ". His grade is too low.";
+		const std::string message = "executor cannot sign " + this->getName() + ". His grade is too low.";
 		throw(GradeTooLowException(message.c_str()));
 	}
 	if (this->executeConcreteForm())
