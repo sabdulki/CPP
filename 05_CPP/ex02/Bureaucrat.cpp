@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 19:14:33 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/10 14:23:37 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/11 14:10:43 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 void Bureaucrat::executeForm(AForm const & form)
 {
 	if (!form.execute(*this))
-		std::cout << "\tBuraucrat " << this->getName() << " executed " << form.getName() << std::endl;
+		std::cout << GREEN << "\tBuraucrat " << this->getName() << " executed " << form.getName() << DEF << std::endl;
 	else
-		std::cout << "\tBuraucrat " << this->getName() << " failed to executed " << form.getName() << std::endl;
+		std::cout << RED << "\tBuraucrat " << this->getName() << " failed to executed " << form.getName() << DEF << std::endl;
 }
 
 void Bureaucrat::signForm(AForm& f)
 {
 	// If the form got signed
 	if (f.getSignStatus())
-		std::cout << this->name << " signed " << f.getName() << std::endl; 
+		std::cout << GREEN << this->name << " signed " << f.getName() << DEF << std::endl; 
 	else
-		std::cout << this->name << " couldn’t sign " << f.getName() << " because bureaucrat's grade is too low or high" << std::endl;
+		std::cout << RED << this->name << " couldn’t sign " << f.getName() << " because bureaucrat's grade is too low or high" << DEF << std::endl;
 }
 
 Bureaucrat::Bureaucrat()
@@ -43,7 +43,7 @@ Bureaucrat::Bureaucrat(const std::string newName, int newGrade) : name(newName)
 		throw(GradeTooLowException("Construction failed"));
 	else
 		this->grade = newGrade;
-	std::cout << "Successfully assigned new grade: " << this->grade << " to " << this->name << std::endl;
+	std::cout << GREEN << "Successfully assigned new grade: " << this->grade << " to " << this->name << DEF << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : name(other.name)
@@ -77,7 +77,7 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "Destructor called for " << this->name << "\n";
 }
 
-const std::string Bureaucrat::getName()
+const std::string Bureaucrat::getName() const
 {
 	return (this->name);
 }
@@ -96,7 +96,7 @@ void Bureaucrat::incrementGrade()
 	if (tmpGrade < 1)
 		throw (GradeTooHighException("Incremention failed"));
 	this->grade = tmpGrade;
-	std::cout << "Successfully incrementetd " << this->name << " range from " << this->grade + 1  << " to " << this->grade << std::endl;
+	std::cout << GREEN << "Successfully incrementetd " << this->name << " range from " << this->grade + 1  << " to " << this->grade << DEF << std::endl;
 	return ;
 }
 
@@ -109,7 +109,7 @@ void Bureaucrat::decrementGrade()
 	if (tmpGrade > 150)
 		throw (GradeTooLowException("Decremention failed"));
 	this->grade = tmpGrade;
-	std::cout << "Successfully decrementetd " << this->name << " range from " << this->grade - 1  << " to " << this->grade << std::endl;
+	std::cout << GREEN << "Successfully decrementetd " << this->name << " range from " << this->grade - 1  << " to " << this->grade << DEF << std::endl;
 	return ;
 }
 

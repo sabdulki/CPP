@@ -6,16 +6,15 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:06:10 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/10 16:02:01 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/11 13:49:46 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ROBOTOMYREQUESTFORM_HPP
 #define ROBOTOMYREQUESTFORM_HPP
 
-#include <iostream>
-#include <fstream>
-#include <string>
+#include "default.hpp"
+#include <cstdlib>
 #include "AForm.hpp"
 class AForm;
 

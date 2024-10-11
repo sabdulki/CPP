@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:07:19 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/10 14:16:34 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/11 14:12:19 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,33 +20,59 @@
 //the instant of class wasn't create.
 //since that, destructor cannot be called.
 
+// void test1()
+// {
+	
+// }
+
+// void test2()
+// {
+	
+// }
+
+// void test3()
+// {
+	
+// }
+
+// void test4()
+// {
+	
+// }
+
 int main()
 {
 	try
 	{
 		std::cout << "------- test 1 -------\n";
 		Bureaucrat bob("Bob", 31);
-		// AForm f1("form1", 30, 5);
-		// AForm f2("form2", 60, 5);
 		std::cout << bob << std::endl;
-		// std::cout << f1 << std::endl;
 
 		std::cout << "------- test 2 -------\n";
-		// f2.beSigned(bob);
-		// f1.beSigned(bob);
-		// bob.signForm(f1);
-
 		ShrubberyCreationForm shrForm("home");
+		shrForm.beSigned(bob);
+		bob.signForm(shrForm);
+		bob.executeForm(shrForm);
+		
 		std::cout << "------- test 3 -------\n";
-		Bureaucrat b3("Mohammad", 15);
+		Bureaucrat mohamed("Mohammad", 71);
+		Bureaucrat ahmed("Ahmed", 25);
+		RobotomyRequestForm robForm("dog");
+		robForm.beSigned(mohamed);
+		mohamed.signForm(robForm);
+		ahmed.executeForm(robForm);
+		std::cout << "------- test 4 -------\n";
+		PresidentialPardonForm pardonForm("Jack");
+		Bureaucrat Sheikh("Sheikh", 1);
+		// pardonForm.beSigned(mohamed);
+		pardonForm.beSigned(ahmed);
+		ahmed.signForm(pardonForm);
+		Sheikh.executeForm(pardonForm);
 
-		// std::cout << "------- test 4 -------\n";
-		shrForm.beSigned(b3);
-		b3.signForm(shrForm);
-		b3.executeForm(shrForm);
+		
 	}
 	catch (std::exception& e) {
-		std::cout << "Caught an exception: " << e.what() << std::endl;
+		std::cout << RED << "Caught an exception: " << e.what() << DEF << std::endl;
 	}
 	return (0);
 }

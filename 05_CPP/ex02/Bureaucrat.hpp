@@ -6,17 +6,16 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 19:14:31 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/08 13:24:07 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/11 14:10:54 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-#include <iostream>
-#include <fstream>
-#include <string>
+#include "default.hpp"
 #include "AForm.hpp"
+
 class AForm;
 
 class Bureaucrat 
@@ -30,7 +29,7 @@ class Bureaucrat
 		Bureaucrat(const Bureaucrat &other);
 		Bureaucrat& operator=(const Bureaucrat &other);
 		~Bureaucrat();
-		const std::string getName();
+		const std::string getName() const;
 		int getGrade() const;
 		void  incrementGrade();
 		void  decrementGrade();

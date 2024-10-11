@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:56:31 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/10 15:57:32 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/11 14:19:59 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ AForm::AForm(const std::string newName, int newSignGrade, int newExecuteGrade)
 	else if (signGrade > 150 || executeGrade > 150)
 		throw(GradeTooLowException("Construction failed. The grade is too low"));
 	this->isSigned = false;
-	// std::cout << "Successfully assigned new grade: " << this->signGrade << " to " << this->name << std::endl;
 }
 
 AForm::AForm(const AForm& other) : name(other.name), signGrade(other.signGrade), executeGrade(other.executeGrade)
@@ -49,7 +48,6 @@ AForm& AForm::operator=(const AForm& other)
 	std::cout << "Base Copy Assignment operator called\n";
 	if (this != &other)
 	{
-		//cannot reassign const name.
 		std::cout << "Cannot reassign const attributes\n";
 		this->isSigned = other.isSigned;
 	}
@@ -84,7 +82,10 @@ const int AForm::getExecuteGrade() const
 void AForm::beSigned(const Bureaucrat& b)
 {
 	if (b.getGrade() > this->getSignGrade())
-		throw (GradeTooLowException("The signing failed. Grade is too low"));
+	{
+		std::string message = "The signing of " + this->getName() + " has failed. Bureaucrat " + b.getName() + " grade is too low.";
+		throw (GradeTooLowException(message.c_str()));
+	}
 	else
 		this->isSigned = true;
 }
@@ -101,21 +102,16 @@ std::ostream& operator<<(std::ostream &os, AForm& f)
 	return (os);
 }
 
-// std::string AForm::getTarget() const
-// {
-// 	return (this->target);
-// }
-
 int AForm::execute(Bureaucrat const & executor) const
 {
 	if (this->getSignStatus() == false)
 	{
-		std::cout << "The " << this->getName() <<  " is not signed yet\n";
+		std::cout << RED << "The " << this->getName() <<  " is not signed yet" << DEF << std::endl;
 		return (1);
 	}
-	if (this->getExecuteGrade() < executor.getGrade()) //137 15
+	if (this->getExecuteGrade() < executor.getGrade())
 	{
-		const std::string message = "executor cannot sign " + this->getName() + ". His grade is too low.";
+		const std::string message = "Bureaucrat" + executor.getName() + "cannot sign " + this->getName() + ". His grade is too low.";
 		throw(GradeTooLowException(message.c_str()));
 	}
 	if (this->executeConcreteForm())

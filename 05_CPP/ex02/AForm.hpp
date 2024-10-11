@@ -6,16 +6,14 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:55:55 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/10 15:56:48 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/11 14:15:52 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 #define FORM_HPP
 
-#include <iostream>
-#include <fstream>
-#include <string>
+#include "default.hpp"
 #include "Bureaucrat.hpp"
 class Bureaucrat;
 
@@ -26,15 +24,13 @@ class AForm
 		const std::string name;
 		const int signGrade;
 		const int executeGrade;
-		const std::string type; // = "BaseForm";
-		// std::string target; // = "";
+		// const std::string type;
 	public:
 		AForm();
 		AForm(const std::string newName, int newSignGrade, int newExecuteGrade);
 		AForm(const AForm& other);
 		AForm& operator=(const AForm& other);
-		// virtual ~AForm();
-		~AForm();
+		virtual ~AForm();
 	
 		//  const std::string getType() const;
 		// virtual std::string getTarget() const;

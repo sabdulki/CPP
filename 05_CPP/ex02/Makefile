@@ -6,7 +6,7 @@
 #    By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/28 19:13:21 by sabdulki          #+#    #+#              #
-#    Updated: 2024/10/10 16:04:14 by sabdulki         ###   ########.fr        #
+#    Updated: 2024/10/11 13:51:58 by sabdulki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,8 @@ all: $(NAME)
 
 clean : 
 	rm -f $(OBJS)
+	rm -f *_shrubbery   
+# Remove any file ending with "_shrubbery"
 
 fclean : clean
 	rm -f $(NAME)

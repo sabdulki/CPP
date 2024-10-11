@@ -6,18 +6,12 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 12:47:02 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/10 15:59:18 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/11 14:16:48 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-// ShrubberyCreationForm::ShrubberyCreationForm(std::string _target) 
-// 	: AForm("ShrubberyCreationForm", 145, 137), target(_target), type("SCF"), signGrade(145), executeGrade(137)
-// {
-//     std::cout << "ShrubberyCreationForm Constructor called\n";
-// }
-	// : AForm("ShrubberyCreationForm", 145, 137), target(_target), type("SCF"), signGrade(145), executeGrade(137)
 ShrubberyCreationForm::ShrubberyCreationForm(std::string _target) : AForm("ShrubberyCreationForm", 145, 137), target(_target)
 {
 	// if (_target.empty())
@@ -51,12 +45,10 @@ std::string ShrubberyCreationForm::getTarget() const
 
 int ShrubberyCreationForm::executeConcreteForm() const
 {
-	//execute the form
-	
 	std::string fileName = this->getTarget().append("_shrubbery");
 	std::ofstream fileWrite(fileName);
 	if (!fileWrite.is_open())
-		return (std::cout << "Unable to open " << fileName.append(".replace") << std::endl, 1);
+		return (std::cout << RED << "Unable to open " << fileName.append(".replace") << DEF << std::endl, 1);
 	std::string result;
 
 	result = 
@@ -75,6 +67,6 @@ int ShrubberyCreationForm::executeConcreteForm() const
 
 	fileWrite << result;
 	fileWrite.close();
-	std::cout << fileName << " file successfully created\n";
+	std::cout  << YELLOW << fileName << " file has been successfully created!" << DEF << std::endl;
 	return (0);
 }
