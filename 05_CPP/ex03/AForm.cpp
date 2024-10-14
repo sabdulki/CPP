@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:56:31 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/11 14:19:59 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/14 13:50:06 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ void AForm::beSigned(const Bureaucrat& b)
 	}
 	else
 		this->isSigned = true;
+	std::cout << GREEN << this->getName() << " was successfully signed by " << b.getName() << DEF << std::endl;
 }
 
 std::ostream& operator<<(std::ostream &os, AForm& f)
@@ -118,19 +119,3 @@ int AForm::execute(Bureaucrat const & executor) const
 		return (1);
 	return (0);
 }
-
-// int AForm::executeConcreteForm() const
-// {
-// 	if (this->getType() == "SCF")
-// 		this->execSCF();
-// 	else if (this->getType() == "RRF")
-// 		this->execRRF();
-// 	else if (this->getType() == "PPF")
-// 		this->execPPF();
-// 	else
-// 	{
-// 		std::cout << "Cannot execute form. Inappropriate type of form\n";
-// 		return (1);
-// 	}
-// 	return (0);
-// }

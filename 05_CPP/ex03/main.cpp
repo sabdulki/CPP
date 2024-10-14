@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:07:19 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/11 14:12:19 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/14 13:49:42 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 //if an exception occured, the constructor stops ->
 //the instant of class wasn't create.
@@ -48,27 +49,25 @@ int main()
 		Bureaucrat bob("Bob", 31);
 		std::cout << bob << std::endl;
 
-		std::cout << "------- test 2 -------\n";
-		ShrubberyCreationForm shrForm("home");
-		shrForm.beSigned(bob);
-		bob.signForm(shrForm);
-		bob.executeForm(shrForm);
-		
-		std::cout << "------- test 3 -------\n";
-		Bureaucrat mohamed("Mohammad", 71);
-		Bureaucrat ahmed("Ahmed", 25);
-		RobotomyRequestForm robForm("dog");
-		robForm.beSigned(mohamed);
-		mohamed.signForm(robForm);
-		ahmed.executeForm(robForm);
-		std::cout << "------- test 4 -------\n";
-		PresidentialPardonForm pardonForm("Jack");
-		Bureaucrat Sheikh("Sheikh", 1);
-		// pardonForm.beSigned(mohamed);
-		pardonForm.beSigned(ahmed);
-		ahmed.signForm(pardonForm);
-		Sheikh.executeForm(pardonForm);
+		std::cout << "------- test 5 -------\n";
+		{
+			Intern someRandomIntern;
+			AForm* rrf;
+			rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+			std::cout << rrf << std::endl;
+			RobotomyRequestForm* robotomyForm = dynamic_cast<RobotomyRequestForm*>(rrf);
+			std::cout << robotomyForm << std::endl;
 
+    		if (robotomyForm) {
+    		    // Success: You can now use RobotomyRequestForm-specific methods
+    		    robotomyForm->beSigned(bob);
+				bob.signForm(*robotomyForm);
+				bob.executeForm(*robotomyForm);
+    		} else {
+    		    // Failed cast: rrf was not actually a RobotomyRequestForm
+    		    std::cout << "Error: Could not cast to RobotomyRequestForm!" << std::endl;
+    		}
+		}
 		
 	}
 	catch (std::exception& e) {

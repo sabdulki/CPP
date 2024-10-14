@@ -6,11 +6,13 @@
 #    By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/28 19:13:21 by sabdulki          #+#    #+#              #
-#    Updated: 2024/10/11 13:51:58 by sabdulki         ###   ########.fr        #
+#    Updated: 2024/10/14 12:51:07 by sabdulki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp \
+		ShrubberyCreationForm.cpp PresidentialPardonForm.cpp \
+		RobotomyRequestForm.cpp Intern.cpp
 # PresidentialPardonForm.cpp RobotomyRequestForm.cpp
 OBJS = $(SRCS:.cpp=.o)
 
