@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:45:44 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/14 15:58:06 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/16 14:10:39 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ int main(int ac, char **av)
 		std::cout << "Invalid argument. It cannot be empty\n";	
 		return (1);
 	}
-	// ScalarConverter converter1;
-	// converter1.convert(str);
+	ScalarConverter::convert(str);
 }
