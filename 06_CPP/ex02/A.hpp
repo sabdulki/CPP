@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 15:34:58 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/17 19:07:02 by sabdulki         ###   ########.fr       */
+/*   Created: 2024/10/17 18:55:08 by sabdulki          #+#    #+#             */
+/*   Updated: 2024/10/17 19:02:18 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALAR_CONVERTER_HPP
-#define SCALAR_CONVERTER_HPP
+#ifndef A_HPP
+#define A_HPP
 
-#include <fstream>
-#include <iostream>
-#include <limits>
-#include <cstdlib>
-#include <cmath>
-#include <iomanip>  // For std::setprecision
+#include "Base.hpp"
 
-class ScalarConverter 
-{
-	private:
-		ScalarConverter();
-	public:
-		static void convert(const std::string str);
-};
+class A : public Base {};
 
 #endif

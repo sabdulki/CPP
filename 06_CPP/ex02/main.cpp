@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 15:34:58 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/17 19:07:02 by sabdulki         ###   ########.fr       */
+/*   Created: 2024/10/17 18:33:22 by sabdulki          #+#    #+#             */
+/*   Updated: 2024/10/17 19:06:19 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALAR_CONVERTER_HPP
-#define SCALAR_CONVERTER_HPP
+#include "Base.hpp"
 
-#include <fstream>
-#include <iostream>
-#include <limits>
-#include <cstdlib>
-#include <cmath>
-#include <iomanip>  // For std::setprecision
-
-class ScalarConverter 
+int main()
 {
-	private:
-		ScalarConverter();
-	public:
-		static void convert(const std::string str);
-};
+	Base* generatedPtr;
+	generatedPtr = generate();
+	identify(generatedPtr);
+	Base& ref = *generatedPtr;
+	identify(ref);
 
-#endif
+	delete generatedPtr;
+}
