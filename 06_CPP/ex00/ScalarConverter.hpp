@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:34:58 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/16 15:16:24 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/17 14:07:52 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <limits>
 #include <cstdlib>
 #include <cmath>
+#include <iomanip>  // For std::setprecision
 
 class ScalarConverter 
 {
