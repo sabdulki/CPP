@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:26:29 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/22 13:52:44 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/10/22 14:41:36 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ Array<T>::Array(unsigned int n)
 {
 	std::cout << "Param constructor called\n";
 	arr = new T[n];
+	_size = n;
 }
 
 template <typename T>
@@ -31,8 +32,11 @@ Array<T>::Array(const Array& other)
 {
 	//use deep copy
 	std::cout << "Copy constructor called\n";
-	this->arr = new T;
-	*this->arr = *other.arr
+	// delete[] arr;
+    arr = new T[other._size];
+    for (unsigned int i = 0; i < other._size; i++)
+        arr[i] = other.arr[i];
+    _size = other._size;
 }
 
 template <typename T>
@@ -40,11 +44,14 @@ Array<T>& Array<T>::operator=(const Array& other)
 {
 	//use deep copy
 	std::cout << "Copy assignment operator called\n";
-	if (this != &other)
-	{
-		this->arr = new T;
-		*this->arr = *other.arr
-	}
+    if (this != &other)
+    {
+        // delete[] arr;
+        arr = new T[other._size];
+        for (unsigned int i = 0; i < other._size; i++)
+            arr[i] = other.arr[i];
+        _size = other._size;
+    }
 	return (*this);
 }
 
@@ -56,9 +63,15 @@ Array<T>::~Array()
 }
 
 template <typename T>
-int Array<T>::size() const
+unsigned int Array<T>::size() const
 {
-	return (sizeof(this->arr) / sizeof(this->arr[0]));
+	return (_size);
+}
+
+template <typename T>
+T* Array<T>::getArr() const
+{
+	return (this->arr);
 }
 
 template <typename T>
@@ -67,4 +80,13 @@ T& Array<T>::operator[](unsigned int index)
 	if (index >= this->size())
 		throw(std::out_of_range("Index is out of bounds"));
 	return (arr[index]);
+}
+
+template <typename T>
+std::ostream& operator<<(std::ostream& os, const Array<T>& obj)
+{
+	T* arr = obj.getArr();
+	for (unsigned int i = 0; i < obj.size(); i++)
+		os << i << ": " << arr[i] << std::endl;
+	return (os);
 }
