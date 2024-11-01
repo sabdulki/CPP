@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:07:19 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/14 13:49:42 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/01 17:35:32 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,6 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
-
-//if an exception occured, the constructor stops ->
-//the instant of class wasn't create.
-//since that, destructor cannot be called.
-
-// void test1()
-// {
-	
-// }
-
-// void test2()
-// {
-	
-// }
-
-// void test3()
-// {
-	
-// }
-
-// void test4()
-// {
-	
-// }
 
 int main()
 {
@@ -52,23 +28,18 @@ int main()
 		std::cout << "------- test 5 -------\n";
 		{
 			Intern someRandomIntern;
-			AForm* rrf;
-			rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-			std::cout << rrf << std::endl;
+			AForm* rrf = someRandomIntern.makeForm("robotomy request", "Bender");;
 			RobotomyRequestForm* robotomyForm = dynamic_cast<RobotomyRequestForm*>(rrf);
-			std::cout << robotomyForm << std::endl;
 
     		if (robotomyForm) {
-    		    // Success: You can now use RobotomyRequestForm-specific methods
     		    robotomyForm->beSigned(bob);
 				bob.signForm(*robotomyForm);
 				bob.executeForm(*robotomyForm);
     		} else {
-    		    // Failed cast: rrf was not actually a RobotomyRequestForm
     		    std::cout << "Error: Could not cast to RobotomyRequestForm!" << std::endl;
     		}
+			delete robotomyForm;
 		}
-		
 	}
 	catch (std::exception& e) {
 		std::cout << RED << "Caught an exception: " << e.what() << DEF << std::endl;

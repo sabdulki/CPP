@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 19:14:31 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/11 14:10:54 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/01 14:15:07 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,16 @@ class Bureaucrat
     	class GradeTooHighException: public std::exception
 		{
 			public:
-				GradeTooHighException(const char *str):_msg(str) { }
-				const char *what() const throw() { return _msg; }
+				GradeTooHighException(const char *str);
+				const char *what() const throw();
 			private:
 				const char *_msg;	
 		};
 		class GradeTooLowException: public std::exception
 		{
 			public:
-				GradeTooLowException(const char *str):_msg(str) { }
-				const char *what(void) const throw() { return _msg; }
+				GradeTooLowException(const char *str);
+				const char *what(void) const throw();
 			private:
 				const char *_msg;	
 		};

@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:07:19 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/07 15:23:47 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/01 16:15:58 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
 	{
 		std::cout << "------- test 1 -------\n";
 		Bureaucrat b1("Bob", 1);
-		// b1.incrementGrade();
+		b1.incrementGrade();
 		std::cout << "grade: " << b1.getGrade() << std::endl;
 		b1.decrementGrade();
 		std::cout << b1 << std::endl;

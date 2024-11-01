@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:07:19 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/11 14:12:19 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/01 16:21:07 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,6 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
-
-//if an exception occured, the constructor stops ->
-//the instant of class wasn't create.
-//since that, destructor cannot be called.
-
-// void test1()
-// {
-	
-// }
-
-// void test2()
-// {
-	
-// }
-
-// void test3()
-// {
-	
-// }
-
-// void test4()
-// {
-	
-// }
 
 int main()
 {
@@ -63,7 +39,7 @@ int main()
 		ahmed.executeForm(robForm);
 		std::cout << "------- test 4 -------\n";
 		PresidentialPardonForm pardonForm("Jack");
-		Bureaucrat Sheikh("Sheikh", 1);
+		Bureaucrat Sheikh("Mr. President", 1);
 		// pardonForm.beSigned(mohamed);
 		pardonForm.beSigned(ahmed);
 		ahmed.signForm(pardonForm);

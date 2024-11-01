@@ -6,19 +6,14 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:56:31 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/14 13:50:06 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/01 16:50:52 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-// std::string AForm::getTarget() const
-// {
-// 	return (this->target);
-// }
-
 AForm::AForm() 
-	: name("Base form"), isSigned(false), signGrade(150), executeGrade(150)
+	: isSigned(false), name("Base form"), signGrade(150), executeGrade(150)
 {
 	std::cout << "Base Default constructor called\n";
 }
@@ -69,12 +64,12 @@ bool AForm::getSignStatus() const
 	return (this->isSigned);
 }
 
-const int AForm::getSignGrade() const
+int AForm::getSignGrade() const
 {
 	return (this->signGrade);
 }
 
-const int AForm::getExecuteGrade() const
+int AForm::getExecuteGrade() const
 {
 	return (this->executeGrade);
 }
@@ -118,4 +113,32 @@ int AForm::execute(Bureaucrat const & executor) const
 	if (this->executeConcreteForm())
 		return (1);
 	return (0);
+}
+
+AForm::GradeTooHighException::GradeTooHighException(const char* str) : _msg(str) {}
+
+const char* AForm::GradeTooHighException::what() const throw() 
+{
+    return _msg;
+}
+
+AForm::GradeTooLowException::GradeTooLowException(const char* str) : _msg(str) {}
+
+const char* AForm::GradeTooLowException::what() const throw() 
+{
+    return _msg;
+}
+
+AForm::EmptyString::EmptyString(const char* str) : _msg(str) {}
+
+const char* AForm::EmptyString::what() const throw() 
+{
+    return _msg;
+}
+
+AForm::InvalidForm::InvalidForm(const char* str) : _msg(str) {}
+
+const char* AForm::InvalidForm::what() const throw() 
+{
+    return _msg;
 }

@@ -6,18 +6,19 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 19:14:33 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/07 16:07:11 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/01 14:09:36 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
 void Bureaucrat::signForm(Form& f)
 {
 	// If the form got signed
 	if (f.getSignStatus())
 		std::cout << this->name << " signed " << f.getName() << std::endl; 
 	else
-		std::cout << this->name << " couldn’t sign " << f.getName() << " because bureaucrat's grade is too low or high" << std::endl;
+		std::cout << this->name << " couldn't sign " << f.getName() << " because bureaucrat's grade is too low" << std::endl;
 }
 
 Bureaucrat::Bureaucrat()
@@ -68,7 +69,7 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "Destructor called for " << this->name << "\n";
 }
 
-const std::string Bureaucrat::getName()
+const std::string Bureaucrat::getName() const
 {
 	return (this->name);
 }
@@ -114,4 +115,18 @@ std::ostream& operator<<(std::ostream& os, Bureaucrat& b)
 	// os << ", bureaucrat grade ";
 	// os << b.getGrade();
     return os;
+}
+
+Bureaucrat::GradeTooHighException::GradeTooHighException(const char* str) : _msg(str) {}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw() 
+{
+    return _msg;
+}
+
+Bureaucrat::GradeTooLowException::GradeTooLowException(const char* str) : _msg(str) {}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw() 
+{
+    return _msg;
 }

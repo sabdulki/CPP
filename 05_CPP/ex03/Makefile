@@ -6,14 +6,13 @@
 #    By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/28 19:13:21 by sabdulki          #+#    #+#              #
-#    Updated: 2024/10/14 12:51:07 by sabdulki         ###   ########.fr        #
+#    Updated: 2024/11/01 17:36:09 by sabdulki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = main.cpp Bureaucrat.cpp AForm.cpp \
 		ShrubberyCreationForm.cpp PresidentialPardonForm.cpp \
 		RobotomyRequestForm.cpp Intern.cpp
-# PresidentialPardonForm.cpp RobotomyRequestForm.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++
@@ -23,6 +22,9 @@ NAME = exec
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 

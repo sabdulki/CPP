@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:06:14 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/11 14:03:29 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/01 15:07:10 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 RobotomyRequestForm::RobotomyRequestForm(std::string _target) : AForm("RobotomyRequestForm", 72, 45), target(_target)
 {
-	// if (_target.empty())
-	// 	throw(EmptyString("Targte cannot be empty"));
+	if (_target.empty())
+		throw(EmptyString("Target cannot be empty"));
 	std::cout << "RobotomyRequestForm Constructor called\n";
 }
 

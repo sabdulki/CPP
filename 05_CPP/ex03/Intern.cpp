@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:59:16 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/14 13:48:29 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/01 17:34:16 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@ Intern::Intern(Intern& other) : formsAmount(other.formsAmount)
 	std::cout << "Intern Copy Constructor called\n";
 }
 
-Intern& Intern::operator&(Intern& other)
+Intern& Intern::operator=(Intern& other)
 {
 	std::cout << "Intern Assign copy operator called\n";
-	std::cout << "Nothing to copy. Retunr the same object\n";
+	std::cout << "Nothing to copy. Return the same object\n";
+	(void)other;
 	return (*this);
 }
 
@@ -36,12 +37,12 @@ Intern::~Intern()
 	std::cout << "Intern Default Destructor called\n";
 }
 
-FormsStrct* Intern::createForms(const int formsAmount)
+FormsStruct* Intern::createForms(const int formsAmount)
 {
-	FormsStrct* forms = new FormsStrct[formsAmount]; 
-	forms[0] = FormsStrct("shrubbery creation", &Intern::createSCF);
-    forms[1] = FormsStrct("robotomy request", &Intern::createRRF);
-    forms[2] = FormsStrct("presidential pardon", &Intern::createPPF);
+	FormsStruct* forms = new FormsStruct[formsAmount]; 
+	forms[0] = FormsStruct("shrubbery creation", &Intern::createSCF);
+    forms[1] = FormsStruct("robotomy request", &Intern::createRRF);
+    forms[2] = FormsStruct("presidential pardon", &Intern::createPPF);
 	return (forms);
 }
 
@@ -55,11 +56,10 @@ AForm* Intern::makeForm(std::string formName, std::string target)
 			return ((this->*forms[i].createForm)(target));
 		}
 	}
-	std::cout << "Form not found!\n";
-	return nullptr;
+	throw(AForm::InvalidForm("Form not found!"));
 }
 
-const int Intern::getFormsAmount()
+int Intern::getFormsAmount() const
 {
 	return (this->formsAmount);
 }

@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:12:29 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/11 14:13:54 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/01 15:07:26 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 PresidentialPardonForm::PresidentialPardonForm(std::string _target) : AForm("PresidentialPardonForm", 25, 5), target(_target)
 {
-	// if (_target.empty())
-	// 	throw(EmptyString("Targte cannot be empty"));
+	if (_target.empty())
+		throw(EmptyString("Target cannot be empty"));
 	std::cout << "PresidentialPardonForm Constructor called\n";
 }
 

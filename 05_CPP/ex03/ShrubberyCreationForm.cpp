@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 12:47:02 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/11 14:16:48 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/01 16:21:47 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string _target) : AForm("ShrubberyCreationForm", 145, 137), target(_target)
 {
-	// if (_target.empty())
-	// 	throw(EmptyString("Targte cannot be empty"));
+	if (_target.empty())
+		throw(EmptyString("Target cannot be empty"));
     std::cout << "ShrubberyCreationForm Param Constructor called\n";
 }
 
@@ -46,7 +46,7 @@ std::string ShrubberyCreationForm::getTarget() const
 int ShrubberyCreationForm::executeConcreteForm() const
 {
 	std::string fileName = this->getTarget().append("_shrubbery");
-	std::ofstream fileWrite(fileName);
+	std::ofstream fileWrite(fileName.c_str());
 	if (!fileWrite.is_open())
 		return (std::cout << RED << "Unable to open " << fileName.append(".replace") << DEF << std::endl, 1);
 	std::string result;
@@ -63,6 +63,18 @@ int ShrubberyCreationForm::executeConcreteForm() const
 	"             |||					\n"
 	"             |||					\n"
 	"             |||					\n"
+	"       , -=-~  .-^- _         \n\n"
+	"        &&& &&  & &&               \n"
+	"      && &\\/&\\|& ()|/ @, &&      \n"
+	"      &\\/(/&/&||/& /_/)_&/_&      \n"
+	"   &() &\\/&|()|/&\\/ '%\" & ()    \n"
+	"  &_\\_&&_\\ |& |&&/&__%_/_& &&    \n"
+	"&&   && & &| &| /& & % ()& /&&	    \n"
+	" ()&_---()&\\&\\|&&-&&--%---()~    \n"
+	"     &&   *  \\|||   *             \n"
+	"           *  |||   *              \n"
+	"             |||                   \n"
+	"             |||                   \n"
 	"       , -=-~  .-^- _";
 
 	fileWrite << result;

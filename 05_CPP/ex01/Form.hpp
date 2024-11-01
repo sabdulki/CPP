@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:55:55 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/07 16:11:24 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/01 14:03:36 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,24 +31,26 @@ class Form
 		Form(const Form& other);
 		Form& operator=(const Form& other);
 		~Form();
-		const std::string getName();
-		bool getSignStatus();
-		const int getSignGrade();
-		const int getExecuteGrade();
+		//getters
+		const std::string getName() const;
+		bool getSignStatus() const;
+		int getSignGrade() const;
+		int getExecuteGrade() const;
+		//other method
 		void beSigned(const Bureaucrat& b);
 		class GradeTooHighException: public std::exception
 		{
 			public:
-				GradeTooHighException(const char *str):_msg(str) { }
-				const char *what() const throw() { return _msg; }
+				GradeTooHighException(const char *str);
+				const char *what() const throw();
 			private:
 				const char *_msg;	
 		};
 		class GradeTooLowException: public std::exception
 		{
 			public:
-				GradeTooLowException(const char *str):_msg(str) { }
-				const char *what(void) const throw() { return _msg; }
+				GradeTooLowException(const char *str);
+				const char *what(void) const throw();
 			private:
 				const char *_msg;	
 		};

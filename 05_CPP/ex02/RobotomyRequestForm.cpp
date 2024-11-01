@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:06:14 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/11 14:03:29 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/01 14:32:16 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 RobotomyRequestForm::RobotomyRequestForm(std::string _target) : AForm("RobotomyRequestForm", 72, 45), target(_target)
 {
-	// if (_target.empty())
-	// 	throw(EmptyString("Targte cannot be empty"));
+	if (_target.empty())
+		throw(EmptyString("Target cannot be empty"));
 	std::cout << "RobotomyRequestForm Constructor called\n";
 }
 
@@ -50,6 +50,7 @@ int RobotomyRequestForm::executeConcreteForm() const
 
 	std::cout << "Drilling noises ...\n";
 
+	std::srand(static_cast<unsigned>(time(0)));
 	int success = rand() % 2;
 	if (success)
 		std::cout << YELLOW << target << " has been robotomized successfully." << DEF << std::endl;
