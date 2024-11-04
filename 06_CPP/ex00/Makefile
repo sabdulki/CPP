@@ -6,7 +6,7 @@
 #    By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/14 15:34:36 by sabdulki          #+#    #+#              #
-#    Updated: 2024/11/01 13:33:00 by sabdulki         ###   ########.fr        #
+#    Updated: 2024/11/04 13:44:09 by sabdulki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ OBJS = $(SRCS:.cpp=.o)
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = exec
+NAME = convert
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)

@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 18:55:08 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/17 18:59:23 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/04 14:14:53 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 
 #include "Base.hpp"
 
-class C : public Base 
-{
-	
-};
+class C : public Base {};
 
 #endif
