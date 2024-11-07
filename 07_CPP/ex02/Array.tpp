@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:26:29 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/22 14:41:36 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/07 22:19:27 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ Array<T>& Array<T>::operator=(const Array& other)
 	std::cout << "Copy assignment operator called\n";
     if (this != &other)
     {
-        // delete[] arr;
+        delete[] arr;
         arr = new T[other._size];
         for (unsigned int i = 0; i < other._size; i++)
             arr[i] = other.arr[i];
@@ -75,7 +75,7 @@ T* Array<T>::getArr() const
 }
 
 template <typename T>
-T& Array<T>::operator[](unsigned int index)
+T& Array<T>::operator[](unsigned int index) const
 {
 	if (index >= this->size())
 		throw(std::out_of_range("Index is out of bounds"));

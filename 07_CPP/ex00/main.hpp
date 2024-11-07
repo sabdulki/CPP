@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 14:40:01 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/21 15:09:12 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/07 22:10:38 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 template <typename T>
 void swap(T& a, T& b)
 {
-	T tmp;
+	// T tmp{a};
 	tmp = a;
 	a = b;
 	b = tmp;

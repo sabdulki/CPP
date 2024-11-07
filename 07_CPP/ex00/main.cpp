@@ -6,12 +6,26 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 14:40:11 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/11/07 14:04:07 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/07 22:24:56 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
+/*
+	using of initializer list is prefered and it's
+	more efficient and safe couse the object is created allredy filled
+	template <typename T>
+	void swap(T& a, T& b)
+	{
+		T tmp{a};
+		// tmp = a;
+		a = b;
+		b = tmp;
+	}
 
+	be carefull - sometimes '='  calls copy constructor,
+	 not copy assignment operator
+*/
 int main()
 {
 	int a = 2;

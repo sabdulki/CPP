@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:26:26 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/22 14:45:53 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/07 22:26:08 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Array
 		~Array();
 	
 		unsigned int size() const;
-		T& operator[](unsigned int index);
+		T& operator[](unsigned int index) const;
 		T* getArr() const;
 		
 };
