@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:08:41 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/21 16:11:47 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/07 14:04:44 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ void printElement(T& element)
     std::cout << element << std::endl;
 }
 
-template <typename T>
-void iter(T* arr, unsigned int length, void(*const func)(T& elem))
+template <typename T, typename returnType>
+void iter(T* arr, unsigned int length, returnType(*const func)(T& elem))
 {
-	for (int i = 0; i < length; i++)
+	for (unsigned int i = 0; i < length; i++)
 		func(arr[i]);
 }
 
