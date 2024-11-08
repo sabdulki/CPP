@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 14:40:11 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/11/07 22:24:56 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/08 13:48:00 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,16 @@
 
 	be carefull - sometimes '='  calls copy constructor,
 	 not copy assignment operator
+
+	dependencies in makefile in ex02
+	- why templates are not assigned in cpp files? 
+	1) each translation unit, that includes templates header, has access to the complete definition of the template.
+	2) Templates must be in headers 
+	because they are "instantiated" (generated as code) 
+	when they are used, and .cpp files are compiled separately.
+	3) Header Files (.hpp or .tpp): By defining templates in header files, 
+	all translation units (i.e., .cpp files) that include the header 
+	can generate the necessary template instances.
 */
 int main()
 {
