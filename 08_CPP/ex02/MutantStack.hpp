@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 12:13:32 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/30 17:37:46 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/08 19:02:25 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 //allows you to specify a custom container type
 //You can use any container type that supports 
 // the same interface as std::deque (such as std::vector or std::list
-template <typename T, typename anyContainer =  std::deque<T> >
+template <typename T, typename anyContainer = std::deque<T> >
 class MutantStack : public std::stack<T, anyContainer> // using Container as the underlying storage.
 {
 	public:
@@ -42,7 +42,6 @@ class MutantStack : public std::stack<T, anyContainer> // using Container as the
 		const_iterator end() const{
 			return this->c.end();
 		}
-	
 };
 
 

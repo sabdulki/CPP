@@ -6,17 +6,15 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:02:24 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/28 16:28:19 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/08 18:57:48 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span(unsigned int N) : currentIndex(0)
+Span::Span(unsigned int N) : _size(N), currentIndex(0), _array(new int[_size])
 {
 	std::cout << "Param constructor called\n";
-	_size = N;
-	_array = new int[_size];
 }
 
 Span::Span(const Span& other)
@@ -33,6 +31,7 @@ Span& Span::operator=(const Span& other)
 	std::cout << "Copy assignment operator called\n";
     if (this != &other)
     {
+		delete[] _array;
         _array = new int[other._size];
         for (unsigned int i = 0; i < other._size; i++)
             _array[i] = other._array[i];
@@ -43,15 +42,16 @@ Span& Span::operator=(const Span& other)
 
 Span::~Span()
 {
+	std::cout << "Destructor called\n";
 	delete[] _array;
 }
 
-unsigned int Span::getSize()
+unsigned int Span::getSize() const
 {
 	return (_size);
 }
 
-unsigned int Span::getCurrentIndex()
+unsigned int Span::getCurrentIndex() const
 {
 	return (currentIndex);
 }
@@ -61,14 +61,14 @@ unsigned int Span::setCurrentIndex()
 	return (currentIndex += 1);
 }
 
-int* Span::getArray()
+int* Span::getArray() const
 {
 	return (_array);
 }
 
-int Span::operator[](unsigned int index)
+int Span::operator[](unsigned int index) const
 {
-	if (index < 0 || index >= this->getSize())
+	if (index >= this->getSize())
 		throw(std::out_of_range("element on this index is not found"));
 	return (this->getArray()[index]);
 }
@@ -76,7 +76,7 @@ int Span::operator[](unsigned int index)
 std::ostream& operator<<(std::ostream& os, Span& obj)
 {
 	os << "array: ";
-	for (int i = 0; i < obj.getSize(); i++)
+	for (unsigned int i = 0; i < obj.getSize(); i++)
 		os << obj.getArray()[i] << ", ";
 	return (os);
 }
@@ -89,24 +89,39 @@ void Span::addNumber(int number)
 	setCurrentIndex();
 }
 
-void Span::fillArray(int n1, int n2)
-{
-	if (n1 == n2 || n1 > n2)
-		throw(std::invalid_argument("invalid argemnets"));
-	int size = this->getSize();
-	int randomNbr;
-	// Create a random number generator
-    std::random_device rd;  // Obtain a random number from hardware
-    std::mt19937 eng(rd()); // Seed the generator
-
-    // Define the range
-    std::uniform_int_distribution<> distr(n1, n2); // Define the range from -10 to 10
-	for (int i = 0; i < size; i++)
+void Span::randomlyFill()
+{	
+	std::srand(time(NULL));	
+	unsigned int size = this->getSize();
+	while (size-- > 0) 
 	{
-		randomNbr = distr(eng);
-		this->addNumber(randomNbr);
+		this->addNumber(rand());
 	}
+	return ;
 }
+
+// void Span::generate_evenly_spaced(int begin, int end) 
+// {
+//     if (end == begin || begin > end)
+// 		throw(std::invalid_argument("invalid argemnets"));
+// 	unsigned int size = this->getSize();
+// 	if (size < 2)
+// 		throw(std::invalid_argument("invalid size"));
+// 	if (size == 2)
+// 	{
+// 		this->addNumber(begin);
+// 		this->addNumber(begin);
+// 		return ;
+// 	}
+
+// 	double step = static_cast<double>(end - begin) / (size - 1);
+
+//     for (unsigned int i = 0; i < size; ++i) {
+//         int value = begin + static_cast<int>(i * step);
+//         this->addNumber(value);
+//     }
+// 	return ;
+// }
 
 int Span::shortestSpan()
 {
@@ -121,7 +136,7 @@ int Span::shortestSpan()
 		if (std::abs(arr[i + 1] - arr[i]) < min)
 		{
 			min = std::abs(arr[i + 1] - arr[i]);
-			std::cout << "min dif: " << arr[i + 1] << " - " << arr[i] << " = " << min << std::endl;
+			// std::cout << "min dif: " << arr[i + 1] << " - " << arr[i] << " = " << min << std::endl;
 		}
 	}
 	return (min);
@@ -134,6 +149,6 @@ int Span::longestSpan()
 	int *arr = this->getArray();
 	int maxValue = *std::max_element(arr, arr + this->getSize());
     int minValue = *std::min_element(arr, arr + this->getSize());
-	std::cout << "max dif: " << maxValue << " - " << minValue << std::endl;
-	return(maxValue - minValue);
+	// std::cout << "max dif: " << maxValue << " - " << minValue << std::endl;
+	return (maxValue - minValue);
 }

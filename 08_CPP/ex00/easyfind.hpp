@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 18:51:58 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/28 14:46:48 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/08 15:58:20 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ typename T::iterator easyfind(T& container, int element)
 	//std::find is an algorithm from the Standard Template Library (STL) 
 	// container.begin(): An iterator pointing to the first element in container.
 	// container.end(): An iterator pointing just past the last element of container.
-	//returns an iterator to the found element
-	// it = std::find(container.begin(), container.end(), element);
+	//returns an iterator to the found element	
 	
 	/*std::find goes through each element from container.begin() to container.end() and 
 	checks if it equals value. It stops searching as soon as it finds a match 

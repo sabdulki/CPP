@@ -6,13 +6,17 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 12:13:28 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/30 17:39:14 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/08 19:01:12 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
 
-int main()
+/*
+Why does std::stack STL Container is NOT iterable?
+*/
+
+int subjectTest()
 {
 	MutantStack<int> mstack;
 	mstack.push(5);
@@ -36,4 +40,15 @@ int main()
 	}
 	std::stack<int> s(mstack);
 	return 0;
+}
+
+void myTest()
+{
+	
+}
+
+int main()
+{
+	subjectTest();
+	myTest();
 }

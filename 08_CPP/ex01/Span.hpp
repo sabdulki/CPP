@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:02:41 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/28 16:15:38 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/08 18:59:09 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,29 @@
 
 #include <iostream>
 #include <algorithm> // For std::sort
-#include <random>
+#include <vector>
+// #include <random>
 
 class Span
 {
 	private:
-		int* _array;
-		int currentIndex;
 		unsigned int _size;
+		int currentIndex;
+		int* _array;
 	public:
 	Span(unsigned int N);
 	Span(const Span& other);
 	Span& operator=(const Span& other);
 	~Span();
 
-	int* getArray();
-	unsigned int getSize();
-	unsigned int getCurrentIndex();
+	int* getArray() const;
+	unsigned int getSize() const;
+	unsigned int getCurrentIndex() const;
 	unsigned int setCurrentIndex();
 	
-	int operator[](unsigned int index);
+	int operator[](unsigned int index) const;
 	void addNumber(int number);
-	void fillArray(int n1, int n2);
+	void randomlyFill();
 	int shortestSpan();
 	int longestSpan();
 };
