@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:27:14 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/11/04 15:55:29 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/17 00:03:13 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,18 @@
 check if the date and value are valid. 
 if not - throw an error.
 if they are valid - search for the same date in the over database and return it's value */ 
+
+
+/* std::map<>
+a lot of parsing 
+value more than 1000 or less than 0
+invalid date
+too early date
+no values at all
+
+accept any type of file
+if no data found, take the closest one (yesterday)
+*/
 
 int main (int ac, char** av)
 {
