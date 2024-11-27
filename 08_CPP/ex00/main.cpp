@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 18:50:50 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/11/08 16:01:37 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/27 15:40:05 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void test1()
 	{
 		std::cout << "vector elemet: " << *(easyfind(containerV, 1)) << std::endl;
 	}
-	catch(std::out_of_range& e) {
+	catch(std::out_of_range& e) 
+	{
 		std::cout << "Exception occured: " << e.what() << std::endl;
 	}
 }
@@ -43,21 +44,14 @@ void test1()
 void test2()
 {
 	std::list<int> containerL;
-	int random;
-
-	for(int i = 0; i < 10; i++)
-	{
-		std::srand(static_cast<unsigned>(time(0)));
-		random = rand() % 20;
-		std::cout << random << std::endl;
-		containerL.push_front(random);
-		sleep(1);
-	}
+	for (int i = 0; i < 10; i+=2)
+		containerL.push_back(i);
 	try
 	{
-		std::cout << "list elemet: " << *(easyfind(containerL, 3)) << std::endl;
+		std::cout << "list elemet: " << *(easyfind(containerL, 6)) << std::endl;
 	}
-	catch(std::out_of_range& e) {
+	catch(std::out_of_range& e) 
+	{
 		std::cout << "Exception occured: " << e.what() << std::endl;
 	}
 }

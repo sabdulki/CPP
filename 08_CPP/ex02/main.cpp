@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 12:13:28 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/11/08 19:01:12 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/11/27 20:19:57 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@
 Why does std::stack STL Container is NOT iterable?
 */
 
-int subjectTest()
+std::stack<int> subjectTest()
 {
+	std::cout << "------- MutantStack test ------\n";
+
 	MutantStack<int> mstack;
 	mstack.push(5);
 	mstack.push(17);
@@ -33,22 +35,116 @@ int subjectTest()
 	MutantStack<int>::iterator ite = mstack.end();
 	++it;
 	--it;
+	int size = 0;
+	std::cout << "mutant stack elements: \n";
 	while (it != ite)
 	{
 		std::cout << *it << std::endl;
 		++it;
+		size++;
 	}
+	std::cout << "size: " << size << std::endl;
 	std::stack<int> s(mstack);
-	return 0;
+	return (s);
 }
 
-void myTest()
+void additionalTest(std::stack<int> s)
 {
+	std::cout << "------- additional test ------\n";
+	s.push(1);
+	s.push(2);
+	s.push(3);
+	std::cout << s.top() << std::endl;
+	s.pop();
+	std::cout << s.top() << std::endl;
+	s.pop();
+	std::cout << s.top() << std::endl;
+	s.pop();
+	std::cout << s.top() << std::endl;
+	s.pop();
+	std::cout << s.top() << std::endl;
+	s.pop();
+	std::cout << s.top() << std::endl;
+	s.pop();
+	std::cout << s.top() << std::endl;
+	s.pop();
+	std::cout << s.top() << std::endl;
+}
+
+void listTest()
+{
+	std::cout << "------- List test ------\n";
 	
+    std::list<int> mlist;
+    mlist.push_back(5);
+    mlist.push_back(17);
+    std::cout << mlist.back() << std::endl; // Equivalent to top() for stack
+    mlist.pop_back();
+    std::cout << mlist.size() << std::endl;
+
+    mlist.push_back(3);
+    mlist.push_back(5);
+    mlist.push_back(737);
+    //[...]
+    mlist.push_back(0);
+
+    std::list<int>::iterator it = mlist.begin();
+    std::list<int>::iterator ite = mlist.end();
+    ++it;
+    --it;
+
+    int size = 0;
+    std::cout << "list elements: \n";
+    while (it != ite) {
+        std::cout << *it << std::endl;
+        ++it;
+        size++;
+    }
+    std::cout << "size: " << size << std::endl;
+
+    std::stack<int, std::list<int> > s(mlist); // Stack constructed from the list
+    std::cout << "top element of stack: " << s.top() << std::endl;
+}
+
+void myTest() 
+{
+	std::cout << "------- MY test ------\n";
+    MutantStack<int> s;
+
+    // Test 1: Check if the stack is empty
+    if (s.empty() != true)
+        return;
+    std::cout << "Stack is empty." << std::endl;
+
+    // Test 2: Push an element onto the stack
+    s.push(10);
+    if (s.empty() == true || s.size() != 1 || s.top() != 10)
+        return;
+    std::cout << "Stack has one element, top is 10." << std::endl;
+
+    // Test 3: Push another element onto the stack
+    s.push(20);
+    if (s.size() != 2 || s.top() != 20)
+        return;
+    std::cout << "Stack has two elements, top is 20." << std::endl;
+
+    // Test 4: Pop an element from the stack
+    s.pop();
+    if (s.size() != 1 || s.top() != 10)
+        return;
+    std::cout << "After pop, stack size is 1, top is 10." << std::endl;
+
+    // Test 5: Pop the last element and check if the stack is empty
+    s.pop();
+    if (s.empty() != true || s.size() != 0)
+        return;
+    std::cout << "Stack is empty after popping all elements." << std::endl;
 }
 
 int main()
 {
-	subjectTest();
-	myTest();
+	std::stack<int> stack = subjectTest();
+	// additionalTest(stack);
+	// listTest();
+	// myTest();
 }

@@ -6,7 +6,7 @@
 #    By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/21 14:40:14 by sabdulki          #+#    #+#              #
-#    Updated: 2024/11/08 13:20:32 by sabdulki         ###   ########.fr        #
+#    Updated: 2024/11/27 20:23:21 by sabdulki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ NAME = exec
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) 
 
-%.o: %.cpp
+%.o: %.cpp Array.tpp Array.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
