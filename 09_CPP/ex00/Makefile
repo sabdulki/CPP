@@ -6,7 +6,7 @@
 #    By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/04 15:25:44 by sabdulki          #+#    #+#              #
-#    Updated: 2024/11/04 15:26:24 by sabdulki         ###   ########.fr        #
+#    Updated: 2024/12/02 14:14:16 by sabdulki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ NAME = btc
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp BitcoinExchange.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)

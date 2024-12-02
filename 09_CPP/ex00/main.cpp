@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:27:14 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/11/25 15:07:33 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/12/02 16:14:44 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,6 @@ int main (int ac, char** av)
 		return (std::cerr << "Invalid arguments" << std::endl, 1);
 	
 	std::string fileName = av[1];
-	// std::ifstream fileRead(fileName);
-	// if (!fileRead.is_open())
-	// 	return (std::cerr << "Unable to open " << fileName << std::endl, 1);
-	
-	// write_csv();
-
 	try {
 		BitcoinExchange btc;
 		btc.writeCsvToMap("data.csv", ".csv");
@@ -51,8 +45,4 @@ int main (int ac, char** av)
 		std::cout << e.what() << std::endl;
 	}
 	return 0;
-	
-	// std::ofstream fileWrite("over");
-	// if (!fileWrite.is_open())
-	// 	return (std::cout << "Unable to open " << fileName.append(".replace") << std::endl, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:22:50 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/11/25 15:03:50 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/12/02 16:14:22 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,12 @@ class BitcoinExchange
 		BitcoinExchange(BitcoinExchange& other);
 		BitcoinExchange& operator=(BitcoinExchange& other);
 
-	void exchange(const std::string &filePath, const std::string &format) const;
+	void exchange(const std::string &fileName, const std::string &format) const;
 	void writeCsvToMap(const std::string &file, const std::string &format);
-	void checkIsFileValid(std::ifstream &infile, const std::string &inFileName, const std::string ext) const;
+	void checkIsFileValid(std::ifstream &infile, const std::string &fileName, const std::string ext) const;
 	bool isValidDateString(const std::string &date) const;
 	bool isLeapYear(int year) const;
 	bool isValidDate(int year, int month, int day) const;
 };
-
-
-int errorMsg(std::string str);
-
 
 #endif
