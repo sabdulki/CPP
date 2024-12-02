@@ -6,10 +6,9 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 00:03:58 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/11/25 15:39:59 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/12/02 18:13:03 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 /* std::list<>
 if number - push to stack
@@ -24,16 +23,15 @@ if {} or other brakets/character -> error
 
 #include "RPN.hpp"
 
-int main(int argc, char **argv) 
+int main(int ac, char **av) 
 {
-	if (argc !=2) {
-		std::cout << "Error: should take a single string_argument" << std::endl;
-		return 1;
-	}
+	if (ac !=2) 
+		return (std::cout << "Error: should take a single string argument" << std::endl, 1);
+
 	RPN rpn;
-	rpn.readString(argv[1]);
+	rpn.readInput(av[1]);
 	try {
-		std::cout << rpn.rpnEval() << std::endl;
+		std::cout << rpn.doEquasions() << std::endl;
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}

@@ -1,8 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RPN.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/02 17:41:21 by sabdulki          #+#    #+#             */
+/*   Updated: 2024/12/02 18:12:28 by sabdulki         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RPN.hpp"
 
 RPN::RPN() { }
 
 RPN::~RPN() { }
+
+RPN::RPN(const RPN &other)
+{
+	if (this != &other) {
+		*this = other;
+	}
+}
 
 const RPN &RPN::operator=(const RPN &other)
 {
@@ -12,29 +31,22 @@ const RPN &RPN::operator=(const RPN &other)
 	return *this;
 }
 
-RPN::RPN(const RPN &other)
-{
-	if (this != &other) {
-		*this = other;
-	}
-}
-
-void RPN::readString(const std::string &str)
+void RPN::readInput(const std::string &str)
 {
 	std::istringstream iss(str);
 	char a;
-	while (iss >> a) {
+	while (iss >> a)
 		_tokens.push(a);
-	}
 }
 
-float RPN::rpnEval(void)
+float RPN::doEquasions(void)
 {
 	float result = 0.0f;
-	while(!_tokens.empty()) {
+	while (!_tokens.empty()) {
 		char ch = _tokens.front();
 		_tokens.pop();
-		if(ch == '+' || ch == '-' || ch == '*' || ch == '/') {
+		if (ch == '+' || ch == '-' || ch == '*' || ch == '/') 
+		{
 			if (_stack.empty())
 				throw(std::runtime_error("Error: not a RPN sequence"));
 			float b = _stack.top();	
@@ -54,7 +66,8 @@ float RPN::rpnEval(void)
 	return result;
 }
 
-float RPN::calculate(float a, float b, char ch) {
+float RPN::calculate(float a, float b, char ch) 
+{
 	if (ch == '+')
 		return a + b;
 	if (ch == '-')
