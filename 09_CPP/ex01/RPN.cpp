@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 17:41:21 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/12/02 18:12:28 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/12/06 14:41:11 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ RPN::RPN(const RPN &other)
 const RPN &RPN::operator=(const RPN &other)
 {
 	if (this != &other) {
-		this->_stack = other._stack;
+		*this = other;
 	}
 	return *this;
 }
@@ -35,16 +35,22 @@ void RPN::readInput(const std::string &str)
 {
 	std::istringstream iss(str);
 	char a;
+	// std::stack<int> tmp;
 	while (iss >> a)
-		_tokens.push(a);
+		_tokens.push_back(a);
+	// for(std::list<char>::iterator it = _tokens.begin(); it != _tokens.end(); it++)
+	// 	std::cout << "token: " << *it << std::endl;
+
 }
 
 float RPN::doEquasions(void)
 {
 	float result = 0.0f;
-	while (!_tokens.empty()) {
-		char ch = _tokens.front();
-		_tokens.pop();
+	
+	for(std::list<char>::iterator it = _tokens.begin(); it != _tokens.end(); ++it) 
+	{
+		char ch = *it;
+		// std::cout <<"ch:"<< ch << std::endl;
 		if (ch == '+' || ch == '-' || ch == '*' || ch == '/') 
 		{
 			if (_stack.empty())
@@ -62,7 +68,8 @@ float RPN::doEquasions(void)
 		} else {
 			_stack.push(ch - '0');
 		}
-	}	
+	}
+	_tokens.clear();
 	return result;
 }
 

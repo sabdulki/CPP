@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 17:41:36 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/12/02 18:12:48 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/12/06 14:23:22 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define RPN_HPP
 
 # include <stack>
-# include <queue>
+# include <list>
 # include <sstream>
 # include <iostream>
 
@@ -22,7 +22,7 @@ class RPN
 {
 	private:
 		std::stack<float> _stack;
-		std::queue<char> _tokens;
+		std::list<char> _tokens;
 	public:
 		RPN();
 		RPN(const RPN &other);
