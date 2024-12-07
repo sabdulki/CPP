@@ -66,22 +66,17 @@ int PmergeMe::readInput(int amount, char** argumnets)
 
 void PmergeMe::doSorting()
 {
-	//execute 1 cycle using _vector
-	//print message about time spend to execute 1 cycle
-
 	clock_t startVec = clock();
 	fordJohnsonSort(this->getVector());
     clock_t endVec = clock();
-    // Calculate the elapsed time in microseconds
-    double durationVec = static_cast<double>(endVec - startVec) / CLOCKS_PER_SEC * 1000000; // Convert to microseconds
+	//convertion of clock ticks to seconds
+    double durationVec = static_cast<double>(endVec - startVec) / CLOCKS_PER_SEC * 100; // Convert to microseconds
 	std::cout << "Time to process a range of " << this->getSize() << " elements with std::vector : " << durationVec << " us" << std::endl;
-	//execute 2 cycle using deque
-	//print message about time spend to execute 2 cycle
 
 	clock_t startDeq = clock();
 	fordJohnsonSort(this->getDeque());
     clock_t endDeq = clock();
-    double durationDeq = static_cast<double>(endDeq - startDeq) / CLOCKS_PER_SEC * 1000000; // Convert to microseconds
+    double durationDeq = static_cast<double>(endDeq - startDeq) / CLOCKS_PER_SEC * 100; // Convert to microseconds
 	std::cout << "Time to process a range of " << this->getSize() << " elements with std::deque : " << durationDeq << " us" << std::endl;
 
 }

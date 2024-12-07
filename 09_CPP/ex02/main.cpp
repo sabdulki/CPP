@@ -6,20 +6,11 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 00:03:58 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/12/06 19:35:42 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/12/07 14:35:43 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
-
-/* std::vector<> and std::deque<>
-
-use jhonson algorith and one more
-show the time that algorith spend to sort the numbers
-accept duplicates
-
-e merge-insert sort algorithm
-*/
 
 /*
 Steps of the Ford-Johnson Algorithm:
