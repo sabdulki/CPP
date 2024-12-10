@@ -6,7 +6,7 @@
 #    By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/14 15:34:36 by sabdulki          #+#    #+#              #
-#    Updated: 2024/11/01 13:33:17 by sabdulki         ###   ########.fr        #
+#    Updated: 2024/12/09 16:45:34 by sabdulki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRCS = main.cpp Base.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
+CFLAGS = -Wall -Wextra -Werror -std=c++11
 
 NAME = exec
 

@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 18:07:43 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/11/04 14:19:12 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/12/09 16:47:19 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,20 +73,20 @@ void identify(Base& p)
 		(void)aPtr;
 		std::cout << "Actual type is: A\n";
 	}
-	catch (std::bad_cast) {}
+	catch (const std::bad_cast& e) {}
 	try 
 	{
 		B& bPtr = dynamic_cast<B&>(p);
 		(void)bPtr;
 		std::cout << "Actual type is: B\n";
 	}
-	catch(std::bad_cast) {}
+	catch(const std::bad_cast& e) {}
 	try 
 	{
 		C& cPtr = dynamic_cast<C&>(p);
 		(void)cPtr;
 		std::cout << "Actual type is: C\n";
 	}
-	catch(std::bad_cast) {}
+	catch(const std::bad_cast& e) {}
 	return ;
 }

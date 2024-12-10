@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 18:02:38 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/10/17 19:04:33 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/12/09 16:46:11 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ as it prevents memory leaks and other issues when dealing with dynamically alloc
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <typeinfo>
 
 class Base 
 {
