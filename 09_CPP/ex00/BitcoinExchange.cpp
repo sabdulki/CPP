@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:23:31 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/12/02 16:18:09 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/12/10 14:38:17 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,9 @@ BitcoinExchange::BitcoinExchange() {}
 
 BitcoinExchange::~BitcoinExchange() {}
 
-BitcoinExchange::BitcoinExchange(BitcoinExchange& other) 
-{
-	if (this != &other)
-		*this = other;
-}
+BitcoinExchange::BitcoinExchange(const BitcoinExchange& other) : dataBase(other.dataBase) {}
 
-BitcoinExchange& BitcoinExchange::operator=(BitcoinExchange& other) 
+BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other) 
 {
 	if (this != &other)
 		this->dataBase = other.dataBase;
@@ -105,7 +101,7 @@ void BitcoinExchange::exchange(const std::string &fileName, const std::string &f
 				continue ;
 			}
 			std::string dateStr, valueStr, delimiter;
-			float value;
+			double value;
 			dateStr = line.substr(0, 10);
 			if (!isValidDateString(dateStr)) {
 				std::cout << "Error: bad input => " << dateStr << std::endl;
@@ -134,8 +130,9 @@ void BitcoinExchange::exchange(const std::string &fileName, const std::string &f
 			}
 			
 			std::map<std::string, float>::const_iterator it = dataBase.find(dateStr);
-			if (it == dataBase.end())
+			if (it == dataBase.end()) //if dateStr is not found
 			{
+				//Returns an iterator pointing to the first element whose key is not less than (>=) dateStr.
 				it = dataBase.lower_bound(dateStr);
 				if (it == dataBase.end() || it == dataBase.begin()) {
 					std::cout << "Error: out of range" << " => " << dateStr << std::endl;
@@ -143,7 +140,10 @@ void BitcoinExchange::exchange(const std::string &fileName, const std::string &f
 				}
 				--it;
 			}
-			std::cout << it->first << " => " << value << " = " << it->second * value << std::endl;
+			// Create an ostringstream for precise formatting of `value`
+        	std::ostringstream formattedValue;
+			formattedValue << std::setprecision(15) << value;
+			std::cout << it->first << " => " << formattedValue.str() << " = " << it->second * value << std::endl;
 		}
 	} catch (std::exception &e) {
 		throw ;

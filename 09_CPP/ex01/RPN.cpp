@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 17:41:21 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/12/06 14:41:11 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/12/10 16:02:54 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,14 @@ RPN::RPN() { }
 
 RPN::~RPN() { }
 
-RPN::RPN(const RPN &other)
-{
-	if (this != &other) {
-		*this = other;
-	}
-}
+RPN::RPN(const RPN &other) : _stack(other._stack), _tokens(other._tokens) {}
 
-const RPN &RPN::operator=(const RPN &other)
+RPN& RPN::operator=(const RPN& other)
 {
-	if (this != &other) {
-		*this = other;
+	if (this != &other) 
+	{
+		_tokens = other._tokens;
+		_stack = other._stack;
 	}
 	return *this;
 }

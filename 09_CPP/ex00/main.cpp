@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:27:14 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/12/04 23:03:05 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/12/10 13:46:31 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,16 @@ if no data found, take the closest one (yesterday)
 int main (int ac, char** av)
 {
 	if (ac != 2 || !av[1])
-		return (std::cerr << "Invalid arguments" << std::endl, 1);
-	
-	/* how to correctly print map's all element, keys and values? */
+		return (std::cerr << "Error: Invalid arguments" << std::endl, 1);
 	std::string fileName = av[1];
-	try {
+	if (fileName.empty())
+		return (std::cout << "Error: invalid file name" << std::endl, 1);
+	try 
+	{
 		BitcoinExchange btc;
 		btc.writeCsvToMap("data.csv", ".csv");
 		btc.exchange(fileName, ".csv");
+		
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}

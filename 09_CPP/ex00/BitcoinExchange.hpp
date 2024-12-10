@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:22:50 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/12/02 17:42:59 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/12/10 14:32:23 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class BitcoinExchange
 	public:
 		BitcoinExchange();
 		~BitcoinExchange();
-		BitcoinExchange(BitcoinExchange& other);
-		BitcoinExchange& operator=(BitcoinExchange& other);
+		BitcoinExchange(const BitcoinExchange& other);
+		BitcoinExchange& operator=(const BitcoinExchange& other);
 
 		void exchange(const std::string &fileName, const std::string &format) const;
 		void writeCsvToMap(const std::string &file, const std::string &format);

@@ -3,7 +3,20 @@
 
 PmergeMe::PmergeMe(){}
 
-//copy constructor and copy assignment operator constructor
+PmergeMe::PmergeMe(const PmergeMe& other)
+	 : _vector(other._vector), _deque(other._deque), size(other.size) {}
+
+PmergeMe& PmergeMe::operator=(const PmergeMe& other)
+{
+	if (this != &other)
+	{
+		_vector = other._vector;
+		_deque = other._deque;
+		size = other.size;
+	}
+	return (*this);
+}
+
 PmergeMe::~PmergeMe(){}
 
 size_t PmergeMe::getSize() const
@@ -40,7 +53,7 @@ void PmergeMe::printArray() const
     std::cout << std::endl;
 }
 
-int PmergeMe::readInput(int amount, char** argumnets)
+void PmergeMe::readInput(int amount, char** argumnets)
 {
 	for (int i = 1; i < amount; i++) 
     {
@@ -60,8 +73,7 @@ int PmergeMe::readInput(int amount, char** argumnets)
 		// std::cout << "size: " << size << std::endl;
 	}
 	else
-		return (std::cout << "error. incorrect size" << std::endl, 1);
-	return (0);
+		throw (std::runtime_error("Error: wrong size"));
 }
 
 void PmergeMe::doSorting()
@@ -77,6 +89,6 @@ void PmergeMe::doSorting()
 	fordJohnsonSort(this->getDeque());
     clock_t endDeq = clock();
     double durationDeq = static_cast<double>(endDeq - startDeq) / CLOCKS_PER_SEC * 100; // Convert to microseconds
-	std::cout << "Time to process a range of " << this->getSize() << " elements with std::deque : " << durationDeq << " us" << std::endl;
+	std::cout << "Time to process a range of " << this->getSize() << " elements with std::deque  : " << durationDeq << " us" << std::endl;
 
 }

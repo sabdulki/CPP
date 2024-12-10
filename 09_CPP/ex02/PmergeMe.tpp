@@ -29,7 +29,8 @@ void PmergeMe::merge(T& arr, int start, int mid, int end)
     int i = 0, j = 0, k = start;
     
     // Merge the arrays
-    while (i < n1 && j < n2) {
+    while (i < n1 && j < n2) 
+    {
         if (left[i] <= right[j]) {
             arr[k] = left[i];
             i++;
@@ -73,15 +74,18 @@ void PmergeMe::fordJohnsonSort(T& arr)
     int n = getSize();
     
     // Pairwise sorting
-    for (int i = 0; i < n - 1; i += 2) {
+    for (int i = 0; i < n - 1; i += 2) 
+    {
         if (arr[i] > arr[i + 1])
             std::swap(arr[i], arr[i + 1]);
     }
     
     // Merging sorted pairs
     int len = 2;
-    while (len < n) {
-        for (int i = 0; i < n - len; i += 2 * len) {
+    while (len < n) 
+    {
+        for (int i = 0; i < n - len; i += 2 * len) 
+        {
             int mid = std::min(i + len - 1, n - 1);
             int end = std::min(i + 2 * len - 1, n - 1);
 			// std::cout <<"i: "<<i<<", mid: "<<mid<<", end: "<<end<<std::endl;

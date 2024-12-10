@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 00:03:58 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/12/04 23:03:41 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/12/10 13:18:17 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int main(int ac, char **av)
 {
 	if (ac !=2) 
 		return (std::cout << "Error: should take a single string argument" << std::endl, 1);
-	/* What the hell is the RPN? */
 	RPN rpn;
 	rpn.readInput(av[1]);
 	try {

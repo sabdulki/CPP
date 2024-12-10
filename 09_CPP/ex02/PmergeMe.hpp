@@ -18,6 +18,8 @@ class PmergeMe
 		size_t size;
 	public:
 		PmergeMe();
+		PmergeMe(const PmergeMe& other);
+		PmergeMe& operator=(const PmergeMe& other);
 		~PmergeMe();
 
 		//helpers 
@@ -25,7 +27,7 @@ class PmergeMe
 		std::vector<int>& getVector();
 		std::deque<int>& getDeque();
 		void printArray() const;
-		int readInput(int amount, char** argumnets);
+		void readInput(int amount, char** argumnets);
 
 		//sorting
 		void doSorting();

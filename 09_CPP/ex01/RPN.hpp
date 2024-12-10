@@ -6,7 +6,7 @@
 /*   By: sabdulki <sabdulki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 17:41:36 by sabdulki          #+#    #+#             */
-/*   Updated: 2024/12/06 14:23:22 by sabdulki         ###   ########.fr       */
+/*   Updated: 2024/12/10 13:13:34 by sabdulki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class RPN
 		std::list<char> _tokens;
 	public:
 		RPN();
-		RPN(const RPN &other);
-		const RPN &operator=(const RPN &other);
+		RPN(const RPN& other);
+		RPN& operator=(const RPN& other);
 		~RPN();
 
 		void readInput(const std::string &str);
